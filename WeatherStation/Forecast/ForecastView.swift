@@ -1,0 +1,93 @@
+import SwiftUI
+
+struct ForecastView: View {
+    @State private var daypart: Daypart?
+    
+    private var xx = ""
+    var body: some View {
+        ZStack{
+            LinearGradient(
+                gradient: Gradient(colors: [
+                    Color.blue.opacity(0.8),
+                    Color.blue.opacity(0.3)
+                ]),
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .edgesIgnoringSafeArea(.all)
+            VStack{
+                Text("Local Forcast")
+                    .font(.largeTitle)
+            if let daypart = daypart {
+                ScrollView{
+                    VStack(alignment:.leading) {
+                        ForEach(0..<(daypart.dayOrNight?.count ?? 0), id: \.self) { index in
+                            if daypart.dayOrNight?[index] != nil{
+                                VStack(alignment: .leading) {
+                                    Text("\(daypart.daypartName?[index] ?? "N/A")")
+                                        .font(.title)
+                                        .bold()
+                                    
+                                    HStack{
+                                        Text("\(daypart.temperature?[index]?.description ?? "N/A")°")
+                                            .font(.title)
+                                            .bold()
+                                        
+                                        if let iconCode = daypart.iconCode?[index] {
+                                            Image("\(iconCode)")
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                .frame(width: 60, height: 60)
+                                            
+                                        } else {
+                                            Text("N/A")
+                                        }
+                                        VStack(alignment:.leading){
+                                            HStack{
+                                                Text("Wind \(daypart.windSpeed?[index]?.description ?? "N/A")")
+                                                    .bold()
+                                                
+                                                Text("\(daypart.windDirectionCardinal?[index] ?? "N/A")")
+                                                    .bold()
+                                                
+                                                
+                                            }
+                                            HStack {
+                                                let precipChance = (daypart.precipChance?[index] ?? 0) < 10 ? 0 : daypart.precipChance?[index] ?? 0
+                                                Text("Rain \(precipChance)%")
+                                                    .bold()
+                                            }
+                                        }
+                                    }
+                                    .padding(.top, -10.0)
+                                    Text("\(daypart.narrative?[index] ?? "N/A")")
+                                    Divider()
+                                }
+                            }
+                        }
+                        .padding(.bottom, 14.0)
+                    }
+                }
+                .padding(20)
+            } else {
+                Text("Loading weather data...")
+                    .onAppear {
+                        ForecastAPI().fetchForecastData { fetchedDaypart in
+                            DispatchQueue.main.async {
+                                self.daypart = fetchedDaypart
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        //.frame(maxWidth: .infinity, maxHeight: .infinity)
+        //.background(Color.blue)
+        //.edgesIgnoringSafeArea(.all)
+    }
+}
+
+
+#Preview{
+    ForecastView()
+}
