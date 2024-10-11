@@ -39,7 +39,7 @@ struct WeatherView: View {
                         
                         VStack {
     
-                            TempsView(wthr: i, title: "Temp")
+                            TempsView(wthr: i, title: "Temperature")
                             WindView(wthr: i)
                             RainView(wthr: i)
                             HumidView(wthr: i)

@@ -3,7 +3,6 @@ import SwiftUI
 struct ForecastView: View {
     @State private var daypart: Daypart?
     
-    private var xx = ""
     var body: some View {
         ZStack{
             LinearGradient(
@@ -18,6 +17,8 @@ struct ForecastView: View {
             VStack{
                 Text("Local Forcast")
                     .font(.largeTitle)
+                Divider()
+                    
             if let daypart = daypart {
                 ScrollView{
                     VStack(alignment:.leading) {
@@ -81,9 +82,7 @@ struct ForecastView: View {
                 }
             }
         }
-        //.frame(maxWidth: .infinity, maxHeight: .infinity)
-        //.background(Color.blue)
-        //.edgesIgnoringSafeArea(.all)
+        
     }
 }
 
