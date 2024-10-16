@@ -5,15 +5,7 @@ struct ForecastView: View {
     
     var body: some View {
         ZStack{
-            LinearGradient(
-                gradient: Gradient(colors: [
-                    Color.blue.opacity(0.8),
-                    Color.blue.opacity(0.3)
-                ]),
-                startPoint: .top,
-                endPoint: .bottom
-            )
-            .edgesIgnoringSafeArea(.all)
+            SetBackground()
             VStack{
                 Text("Local Forcast")
                     .font(.largeTitle)
@@ -89,4 +81,18 @@ struct ForecastView: View {
 
 #Preview{
     ForecastView()
+}
+
+struct SetBackground: View {
+    var body: some View {
+        LinearGradient(
+            gradient: Gradient(colors: [
+                Color.blue.opacity(0.8),
+                Color.blue.opacity(0.3)
+            ]),
+            startPoint: .top,
+            endPoint: .bottom
+        )
+        .edgesIgnoringSafeArea(.all)
+    }
 }
