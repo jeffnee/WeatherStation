@@ -20,7 +20,7 @@ struct ForecastView: View {
                                     Text("\(daypart.daypartName?[index] ?? "N/A")")
                                         .font(.title)
                                         .bold()
-                                    
+                        
                                     HStack{
                                         Text("\(daypart.temperature?[index]?.description ?? "N/A")°")
                                             .font(.title)
@@ -74,7 +74,6 @@ struct ForecastView: View {
                 }
             }
         }
-        
     }
 }
 

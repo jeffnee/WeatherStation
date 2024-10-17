@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AboutView: View {
     var body: some View {
-        Text("About this app")
+        Text("This app is a short version of my webpage thedriveweather.com ")
     }
 }
 
