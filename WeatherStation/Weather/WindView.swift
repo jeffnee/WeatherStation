@@ -9,19 +9,10 @@ import SwiftUI
 
 struct WindView: View {
     var wthr: Weather
+    
     var body: some View {
         VStack(alignment: .leading) {
-            HStack {
-                Text("Wind")
-                Image(systemName: "wind")
-            }
-            .font(.system(size: 25))
-            .frame(maxWidth:.infinity)
-            .padding(.top, 8)
-            .padding(.bottom, 8)
-            .background(Color.blue)
-            .foregroundColor(.white)
-            .cornerRadius(20, corners: [.topLeft, .topRight])
+            weatherHeader(title: "Wind", icon: "wind")
             
             VStack(alignment:.leading){
                 Text("Currently \(wthr.windCurr)  \(wthr.windDir)")

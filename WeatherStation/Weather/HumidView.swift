@@ -11,18 +11,8 @@ struct HumidView: View {
     var wthr: Weather
     var body: some View {
         VStack(alignment: .leading) {
-            HStack(alignment: .top) {
-                Text("Humidity")
-                Image(systemName: "humidity.fill")
-            }
-            .font(.system(size: 25))
-            .frame(maxWidth:.infinity)
-            .padding(.top, 8)
-            .padding(.bottom, 8)
-            .background(Color.blue)
-            .foregroundColor(.white)
-            .cornerRadius(20, corners: [.topLeft, .topRight])
-            
+            weatherHeader(title: "Humidity", icon: "humidity.fill")
+
             VStack(alignment: .leading) {
                 Text("Currently \(wthr.humidCurr)")
                     .font(.system(size: 20).bold())

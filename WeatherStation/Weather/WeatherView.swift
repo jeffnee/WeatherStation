@@ -8,19 +8,12 @@
 import SwiftUI
 
 struct WeatherView: View {
+    
     @State private var weather = [Weather]()
     
     var body: some View {
         ZStack {
-            LinearGradient(
-                gradient: Gradient(colors: [
-                    Color.blue.opacity(0.8),
-                    Color.blue.opacity(0.3)
-                ]),
-                startPoint: .top,
-                endPoint: .bottom
-            )
-            .edgesIgnoringSafeArea(.all)
+            SetBackground()
            
             VStack{
                 Text ("Jeffs weather station")
@@ -38,8 +31,7 @@ struct WeatherView: View {
                             .font(.headline.bold())
                         
                         VStack {
-    
-                            TempsView(wthr: i, title: "Temperature")
+                            TempsView(wthr: i)
                             WindView(wthr: i)
                             RainView(wthr: i)
                             HumidView(wthr: i)

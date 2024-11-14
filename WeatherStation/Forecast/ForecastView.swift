@@ -9,6 +9,7 @@ struct ForecastView: View {
             VStack{
                 Text("Local Forcast")
                     .font(.largeTitle)
+                Text("Santa Barbara area")
                 Divider()
                     
             if let daypart = daypart {

@@ -9,20 +9,10 @@ import SwiftUI
 
 struct TempsView: View {
     var wthr: Weather
-    var title: String
+    
     var body: some View {
         VStack(alignment: .leading) {
-            HStack(alignment: .top) {
-                Text("\(title)")
-                Image(systemName: "thermometer.medium")
-            }
-            .font(.title)
-            .frame(maxWidth:.infinity)
-            .padding(.top, 8)
-            .padding(.bottom, 8)
-            .background(Color.blue)
-            .foregroundColor(.white)
-            .cornerRadius(20, corners: [.topLeft, .topRight])
+            weatherHeader(title: "Temperature", icon: "thermometer.medium")
             
             VStack(alignment: .leading) {
                 Text("Currently \(wthr.tempCurr)")
@@ -41,12 +31,10 @@ struct TempsView: View {
             .padding(.bottom,15)
             .background(Color.white)
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
         .frame(width: 350, alignment: .leading)
         .foregroundColor(.black)
         .font(.system(size: 20))
         .background(Color.white)
         .cornerRadius(20)
-        
     }
 }

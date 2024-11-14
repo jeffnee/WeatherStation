@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @State var fName: String = "temperature"
+    //@State var fName: String = "temperature"
 
     var body: some View {
 
@@ -19,15 +19,15 @@ struct ContentView: View {
                     VStack{
                         Image(systemName: "house")
                         Text("Home")}
-
                     }
+            
            ForecastView()
                 .tabItem {
                     VStack{
                         Image(systemName: "calendar.badge.clock")
                         Text("Forecast")}
-
                     }
+            
             AboutView()
                 .tabItem {
                     VStack{

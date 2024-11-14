@@ -12,18 +12,8 @@ struct RainView: View {
     
     var body: some View {
     VStack(alignment: .leading) {
-        HStack {
-                Text("Rain")
-                Image(systemName: "cloud.rain")
-            }
-            .font(.system(size: 25))
-            .frame(maxWidth:.infinity)
-            .padding(.top, 8)
-            .padding(.bottom, 8)
-            .background(Color.blue)
-            .foregroundColor(.white)
-            .cornerRadius(20, corners: [.topLeft, .topRight])
-        
+        weatherHeader(title: "Rain", icon: "cloud.rain")
+
         VStack(alignment: .leading){
                 Text("Todays rain \(wthr.rainToday)")
                     .font(.system(size: 20).bold())
