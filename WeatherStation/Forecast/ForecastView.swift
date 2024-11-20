@@ -9,8 +9,10 @@ struct ForecastView: View {
             VStack{
                 Text("Local Forcast")
                     .font(.largeTitle)
+                
                 Text("Santa Barbara area")
-                Divider()
+                
+                divide()
                     
             if let daypart = daypart {
                 ScrollView{
@@ -26,6 +28,8 @@ struct ForecastView: View {
                                         Text("\(daypart.temperature?[index]?.description ?? "N/A")°")
                                             .font(.title)
                                             .bold()
+                                            .foregroundColor(daypart.dayOrNight?[index] == "D" ? .red : .primary)
+
                                         
                                         if let iconCode = daypart.iconCode?[index] {
                                             Image("\(iconCode)")
@@ -55,7 +59,7 @@ struct ForecastView: View {
                                     }
                                     .padding(.top, -10.0)
                                     Text("\(daypart.narrative?[index] ?? "N/A")")
-                                    Divider()
+                                    divide()
                                 }
                             }
                         }
@@ -94,5 +98,15 @@ struct SetBackground: View {
             endPoint: .bottom
         )
         .edgesIgnoringSafeArea(.all)
+    }
+}
+
+struct divide: View {
+    var body: some View {
+        Divider()
+            .frame(height: 0.7)
+            .background(Color.primary)
+            .padding(.horizontal)
+            .padding(.top)
     }
 }

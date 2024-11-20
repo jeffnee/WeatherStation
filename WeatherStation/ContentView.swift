@@ -9,8 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
 
-    //@State var fName: String = "temperature"
-
     var body: some View {
 
         TabView{
@@ -33,8 +31,8 @@ struct ContentView: View {
                     VStack{
                         Image(systemName: "info.circle")
                         Text("About")
-                    }
                 }
+            }
         }
     }
 }
