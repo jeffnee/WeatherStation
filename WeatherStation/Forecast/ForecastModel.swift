@@ -6,6 +6,7 @@ struct Daypart: Codable {
     let iconCode: [Int?]?
     let narrative: [String?]?
     let precipChance: [Int?]?
+    let qpf: [Double?]?
     let temperature: [Int?]?
     let windSpeed: [Int?]?
     let windDirectionCardinal: [String?]?

@@ -48,12 +48,17 @@ struct ForecastView: View {
                                                 Text("\(daypart.windDirectionCardinal?[index] ?? "N/A")")
                                                     .bold()
                                                 
-                                                
                                             }
                                             HStack {
                                                 let precipChance = (daypart.precipChance?[index] ?? 0) < 10 ? 0 : daypart.precipChance?[index] ?? 0
                                                 Text("Rain \(precipChance)%")
                                                     .bold()
+                                            }
+                                            HStack{
+                                                if let qpfValue = daypart.qpf?[index], qpfValue > 0 {
+                                                    Text("Amount \(qpfValue.description)")
+                                                        .bold()
+                                                }
                                             }
                                         }
                                     }
