@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct WeatherDetailView: View {
+struct ForecastDetailView: View {
     let daypart: Daypart // Replace `Daypart` with the actual type of `daypart`
     let index: Int       // Pass the index for the data
 
@@ -24,6 +24,8 @@ struct WeatherDetailView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 60, height: 60)
+                    .background(Color(.black).opacity(0.2))
+                    .cornerRadius(10)
             } else {
                 Text("N/A")
             }

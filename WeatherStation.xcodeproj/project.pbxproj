@@ -26,7 +26,7 @@
 		867E3BFA2C851C840020C338 /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867E3BF92C851C840020C338 /* ForecastView.swift */; };
 		867E3C1C2C87F0150020C338 /* ForecastDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867E3C1B2C87F0150020C338 /* ForecastDataService.swift */; };
 		867E3C1E2C8BBAA80020C338 /* WeatherDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867E3C1D2C8BBAA80020C338 /* WeatherDataService.swift */; };
-		86F0D2A02CF0294700E622AD /* WeatherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F0D29F2CF0294700E622AD /* WeatherDetailView.swift */; };
+		86F0D2A02CF0294700E622AD /* ForecastDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F0D29F2CF0294700E622AD /* ForecastDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +51,7 @@
 		867E3C1B2C87F0150020C338 /* ForecastDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastDataService.swift; sourceTree = "<group>"; };
 		867E3C1D2C8BBAA80020C338 /* WeatherDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataService.swift; sourceTree = "<group>"; };
 		869CDAB42CE8352C00950F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		86F0D29F2CF0294700E622AD /* WeatherDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailView.swift; sourceTree = "<group>"; };
+		86F0D29F2CF0294700E622AD /* ForecastDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +125,7 @@
 		867E3C3D2C9CD9A50020C338 /* Forecast */ = {
 			isa = PBXGroup;
 			children = (
-				86F0D29F2CF0294700E622AD /* WeatherDetailView.swift */,
+				86F0D29F2CF0294700E622AD /* ForecastDetailView.swift */,
 				867E3BF92C851C840020C338 /* ForecastView.swift */,
 				867E3BEB2C83EA2A0020C338 /* ForecastModel.swift */,
 				867E3C1B2C87F0150020C338 /* ForecastDataService.swift */,
@@ -209,7 +209,7 @@
 				867E3BFA2C851C840020C338 /* ForecastView.swift in Sources */,
 				867E3BE62C83E9C80020C338 /* TempsView.swift in Sources */,
 				867E3BEE2C83EA4D0020C338 /* ShowGraphImage.swift in Sources */,
-				86F0D2A02CF0294700E622AD /* WeatherDetailView.swift in Sources */,
+				86F0D2A02CF0294700E622AD /* ForecastDetailView.swift in Sources */,
 				867E3BF82C85137F0020C338 /* AboutView.swift in Sources */,
 				867E3BF22C83EA870020C338 /* HumidView.swift in Sources */,
 				867E3BF02C83EA690020C338 /* extensions.swift in Sources */,

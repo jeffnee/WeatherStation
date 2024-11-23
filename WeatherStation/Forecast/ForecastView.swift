@@ -24,7 +24,7 @@ struct ForecastView: View {
                                         .font(.title)
                                         .bold()
 
-                                    WeatherDetailView(daypart: daypart, index: index)
+                                    ForecastDetailView(daypart: daypart, index: index)
 
                                     Text("\(daypart.narrative?[index] ?? "N/A")")
                                    
