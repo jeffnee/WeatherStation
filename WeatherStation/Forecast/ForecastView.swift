@@ -12,7 +12,7 @@ struct ForecastView: View {
                 
                 Text("Santa Barbara area")
                 
-                divide()
+                divider()
                     
             if let daypart = daypart {
                 ScrollView{
@@ -23,48 +23,12 @@ struct ForecastView: View {
                                     Text("\(daypart.daypartName?[index] ?? "N/A")")
                                         .font(.title)
                                         .bold()
-                        
-                                    HStack{
-                                        Text("\(daypart.temperature?[index]?.description ?? "N/A")°")
-                                            .font(.title)
-                                            .bold()
-                                            .foregroundColor(daypart.dayOrNight?[index] == "D" ? .red : .primary)
 
-                                        
-                                        if let iconCode = daypart.iconCode?[index] {
-                                            Image("\(iconCode)")
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fit)
-                                                .frame(width: 60, height: 60)
-                                            
-                                        } else {
-                                            Text("N/A")
-                                        }
-                                        VStack(alignment:.leading){
-                                            HStack{
-                                                Text("Wind \(daypart.windSpeed?[index]?.description ?? "N/A")")
-                                                    .bold()
-                                                
-                                                Text("\(daypart.windDirectionCardinal?[index] ?? "N/A")")
-                                                    .bold()
-                                                
-                                            }
-                                            HStack {
-                                                let precipChance = (daypart.precipChance?[index] ?? 0) < 10 ? 0 : daypart.precipChance?[index] ?? 0
-                                                Text("Rain \(precipChance)%")
-                                                    .bold()
-                                            }
-                                            HStack{
-                                                if let qpfValue = daypart.qpf?[index], qpfValue > 0 {
-                                                    Text("Amount \(qpfValue.description)")
-                                                        .bold()
-                                                }
-                                            }
-                                        }
-                                    }
-                                    .padding(.top, -10.0)
+                                    WeatherDetailView(daypart: daypart, index: index)
+
                                     Text("\(daypart.narrative?[index] ?? "N/A")")
-                                    divide()
+                                   
+                                    divider()
                                 }
                             }
                         }
@@ -106,7 +70,7 @@ struct SetBackground: View {
     }
 }
 
-struct divide: View {
+struct divider: View {
     var body: some View {
         Divider()
             .frame(height: 0.7)
