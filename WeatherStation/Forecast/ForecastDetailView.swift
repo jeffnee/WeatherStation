@@ -2,7 +2,7 @@
 //  WeatherDetailView.swift
 //  WeatherStation
 //
-//  Created by Jeff Neely on 11/21/24.
+//  Creted by Jeff Neely on 11/21/24.
 //
 
 
@@ -15,7 +15,7 @@ struct ForecastDetailView: View {
     var body: some View {
         HStack {
             Text("\(daypart.temperature?[index]?.description ?? "N/A")°")
-                .font(.title)
+                .font(.largeTitle)
                 .bold()
                 .foregroundColor(daypart.dayOrNight?[index] == "D" ? .yellow : .primary)
             
@@ -50,6 +50,7 @@ struct ForecastDetailView: View {
                     }
                 }
             }
+            .padding(.leading,5)
         }
         .padding(.top, -10.0)
     }

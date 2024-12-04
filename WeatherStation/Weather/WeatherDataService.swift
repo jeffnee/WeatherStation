@@ -15,14 +15,14 @@ struct WeatherDataService {
         }
 
         do {
-            let (data, _) = try await URLSession.shared.data(from: url)
+            let (data, error) = try await URLSession.shared.data(from: url)
 
             print("Data received: \(data)") 
 
             if let decodeResponse = try? JSONDecoder().decode([Weather].self, from: data) {
                 return decodeResponse
             } else {
-                print("Failed to decode response: \(String(data: data, encoding: .utf8) ?? "Unknown data")")
+                print("Failed to decode response: \(error.debugDescription)")
             }
         } catch {
             print("Request failed with error: \(error.localizedDescription)")

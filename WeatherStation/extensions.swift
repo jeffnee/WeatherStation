@@ -24,3 +24,15 @@ struct RoundedCorner: Shape {
         return Path(path.cgPath)
     }
 }
+
+//extension DateTime {
+//    func validateUpdate() {
+//        // Your validation logic
+//        if time.isEmpty || date.isEmpty {
+//            print("Invalid update: time or date is missing.")
+//        } else {
+//            print("Validation passed for \(time) on \(date).")
+//        }
+//    }
+//}
+

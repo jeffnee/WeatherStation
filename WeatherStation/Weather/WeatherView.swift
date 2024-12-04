@@ -10,7 +10,7 @@ import SwiftUI
 struct WeatherView: View {
     
     @State private var weather = [Weather]()
-    
+        
     var body: some View {
         ZStack {
             SetBackground()
@@ -25,18 +25,28 @@ struct WeatherView: View {
                 Text("Santa Barbra, Ca")
                     .font(.title3)
                 
+                //let t = isWithinThirtyMinutes(date: "12/03/24", time: "11:25a")
+                
+                Text("valid")
+                    .background(isWithinThirtyMinutes(date: "12/04/24",
+                                                      time: "03:02p") ? Color.green : Color.red)            
+                            
+                if let first = weather.first {
+                    Text("Last update \(first.time) \(first.date)")
+                            .font(.headline.bold())
+                }
+        
+                
+                
                 ScrollView{
                     ForEach (weather, id: \.self) { i in
-                        Text("Last update \(i.time)  \(i.date)")
-                            .font(.headline.bold())
-                        
+                       
                         VStack {
                             TempsView(wthr: i)
                             WindView(wthr: i)
                             RainView(wthr: i)
                             HumidView(wthr: i)
                         }
-                        
                     }
                     .task {
                         await fetchData()
@@ -50,9 +60,18 @@ struct WeatherView: View {
             weather = fetchedWeather
         }
     }
+    
 
 }
 #Preview {
     WeatherView()
 }
 
+struct validateUpdate: View {
+    var weather: Weather
+    
+    var body: some View {
+        
+        Text("validate")
+    }
+}
