@@ -24,20 +24,16 @@ struct WeatherView: View {
                 
                 Text("Santa Barbra, Ca")
                     .font(.title3)
-                
-                //let t = isWithinThirtyMinutes(date: "12/03/24", time: "11:25a")
-                
-                Text("valid")
-                    .background(isWithinThirtyMinutes(date: "12/04/24",
-                                                      time: "03:02p") ? Color.green : Color.red)            
+                          
+//               let time1: String = weather.first?.time ?? "n/a"
+//                Text("valid")
+//                    .background(updateIsValid(updateTimeString: time1) ?? false ? Color.green : Color.red)
                             
                 if let first = weather.first {
                     Text("Last update \(first.time) \(first.date)")
                             .font(.headline.bold())
                 }
         
-                
-                
                 ScrollView{
                     ForEach (weather, id: \.self) { i in
                        
