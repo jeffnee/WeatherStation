@@ -1,6 +1,5 @@
 //
 //  ContentView.swift
-//  breakiingBad
 //
 //  Created by Jeff Neely on 7/27/24.
 //
@@ -17,6 +16,13 @@ struct ContentView: View {
                     VStack{
                         Image(systemName: "house")
                         Text("Home")}
+                    }
+            
+            WeatherView2()
+                .tabItem {
+                    VStack{
+                        Image(systemName: "house")
+                        Text("Home 2")}
                     }
             
            ForecastView()

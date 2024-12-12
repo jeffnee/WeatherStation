@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		862CDD282D0B8D35003CEA21 /* RainView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862CDD272D0B8D15003CEA21 /* RainView2.swift */; };
+		862CDD2A2D0B9140003CEA21 /* HumidView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862CDD292D0B9112003CEA21 /* HumidView2.swift */; };
 		866FE92F2CD5949D007E3161 /* weatherHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866FE92E2CD5949D007E3161 /* weatherHeader.swift */; };
 		867160A12CFFAE6E00D6B3E8 /* ValidateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867160A02CFFAE6E00D6B3E8 /* ValidateTime.swift */; };
+		867160CF2D066B2100D6B3E8 /* WeatherVew2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867160CE2D066B2100D6B3E8 /* WeatherVew2.swift */; };
+		867160D22D066D4600D6B3E8 /* TempsView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867160D12D066D1D00D6B3E8 /* TempsView2.swift */; };
+		867160D42D06769700D6B3E8 /* WeatherHeader2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867160D32D06766E00D6B3E8 /* WeatherHeader2.swift */; };
+		867160D72D08E4CF00D6B3E8 /* WindView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867160D62D08E4CF00D6B3E8 /* WindView2.swift */; };
 		867E3BD82C83E8950020C338 /* WeatherStationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867E3BD72C83E8950020C338 /* WeatherStationApp.swift */; };
 		867E3BDA2C83E8950020C338 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867E3BD92C83E8950020C338 /* ContentView.swift */; };
 		867E3BDC2C83E8960020C338 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 867E3BDB2C83E8960020C338 /* Assets.xcassets */; };
@@ -30,8 +36,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		862CDD272D0B8D15003CEA21 /* RainView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainView2.swift; sourceTree = "<group>"; };
+		862CDD292D0B9112003CEA21 /* HumidView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumidView2.swift; sourceTree = "<group>"; };
 		866FE92E2CD5949D007E3161 /* weatherHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherHeader.swift; sourceTree = "<group>"; };
 		867160A02CFFAE6E00D6B3E8 /* ValidateTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateTime.swift; sourceTree = "<group>"; };
+		867160CE2D066B2100D6B3E8 /* WeatherVew2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVew2.swift; sourceTree = "<group>"; };
+		867160D12D066D1D00D6B3E8 /* TempsView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempsView2.swift; sourceTree = "<group>"; };
+		867160D32D06766E00D6B3E8 /* WeatherHeader2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHeader2.swift; sourceTree = "<group>"; };
+		867160D62D08E4CF00D6B3E8 /* WindView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindView2.swift; sourceTree = "<group>"; };
 		867E3BD42C83E8950020C338 /* WeatherStation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherStation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		867E3BD72C83E8950020C338 /* WeatherStationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStationApp.swift; sourceTree = "<group>"; };
 		867E3BD92C83E8950020C338 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -65,13 +77,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		867160D02D066CAA00D6B3E8 /* Weather2 */ = {
+			isa = PBXGroup;
+			children = (
+				867160D12D066D1D00D6B3E8 /* TempsView2.swift */,
+				867160D62D08E4CF00D6B3E8 /* WindView2.swift */,
+				867160D32D06766E00D6B3E8 /* WeatherHeader2.swift */,
+				862CDD292D0B9112003CEA21 /* HumidView2.swift */,
+				862CDD272D0B8D15003CEA21 /* RainView2.swift */,
+				867160CE2D066B2100D6B3E8 /* WeatherVew2.swift */,
+			);
+			path = Weather2;
+			sourceTree = "<group>";
+		};
 		867BBC392CBF2CA600C49420 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
 				867E3BE52C83E9C80020C338 /* TempsView.swift */,
-				866FE92E2CD5949D007E3161 /* weatherHeader.swift */,
 				867E3BE72C83E9F20020C338 /* WindView.swift */,
 				867E3BE92C83EA0E0020C338 /* RainView.swift */,
+				866FE92E2CD5949D007E3161 /* weatherHeader.swift */,
 				867E3BF12C83EA870020C338 /* HumidView.swift */,
 				867E3BED2C83EA4D0020C338 /* ShowGraphImage.swift */,
 				867E3C1D2C8BBAA80020C338 /* WeatherDataService.swift */,
@@ -103,6 +128,7 @@
 			children = (
 				869CDAB42CE8352C00950F12 /* Info.plist */,
 				867E3BD72C83E8950020C338 /* WeatherStationApp.swift */,
+				867160D02D066CAA00D6B3E8 /* Weather2 */,
 				867E3BD92C83E8950020C338 /* ContentView.swift */,
 				867BBC392CBF2CA600C49420 /* Weather */,
 				867E3BEF2C83EA690020C338 /* extensions.swift */,
@@ -208,17 +234,23 @@
 				867E3BFA2C851C840020C338 /* ForecastView.swift in Sources */,
 				867E3BE62C83E9C80020C338 /* TempsView.swift in Sources */,
 				867160A12CFFAE6E00D6B3E8 /* ValidateTime.swift in Sources */,
+				867160D72D08E4CF00D6B3E8 /* WindView2.swift in Sources */,
 				867E3BEE2C83EA4D0020C338 /* ShowGraphImage.swift in Sources */,
 				86F0D2A02CF0294700E622AD /* ForecastDetailView.swift in Sources */,
 				867E3BF82C85137F0020C338 /* AboutView.swift in Sources */,
 				867E3BF22C83EA870020C338 /* HumidView.swift in Sources */,
+				867160CF2D066B2100D6B3E8 /* WeatherVew2.swift in Sources */,
 				867E3BF02C83EA690020C338 /* extensions.swift in Sources */,
 				867E3BEA2C83EA0E0020C338 /* RainView.swift in Sources */,
 				867E3BEC2C83EA2A0020C338 /* ForecastModel.swift in Sources */,
 				866FE92F2CD5949D007E3161 /* weatherHeader.swift in Sources */,
+				862CDD2A2D0B9140003CEA21 /* HumidView2.swift in Sources */,
 				867E3BE82C83E9F20020C338 /* WindView.swift in Sources */,
+				862CDD282D0B8D35003CEA21 /* RainView2.swift in Sources */,
 				867E3BD82C83E8950020C338 /* WeatherStationApp.swift in Sources */,
 				867E3C1C2C87F0150020C338 /* ForecastDataService.swift in Sources */,
+				867160D42D06769700D6B3E8 /* WeatherHeader2.swift in Sources */,
+				867160D22D066D4600D6B3E8 /* TempsView2.swift in Sources */,
 				867E3C1E2C8BBAA80020C338 /* WeatherDataService.swift in Sources */,
 				867E3BF42C83EAA90020C338 /* WeatherModule.swift in Sources */,
 			);
