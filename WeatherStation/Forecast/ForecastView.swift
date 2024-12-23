@@ -14,17 +14,11 @@ struct ForecastView: View {
                 
                 Text("Santa Barbara area")
                     
-                
-//                .frame(maxWidth: .infinity)
-//                .frame(height: 90)
-//                .background(Color.blue.opacity(0.3))
-                //divider()
-
                 if let daypart = daypart {
                     ScrollViewReader { proxy in
                         ScrollView {
                             VStack(alignment: .leading) {
-                                // Invisible element at the top for scrolling
+                               
                                 Color.clear
                                     .frame(height: 0)
                                     .id(scrollToTopID)
@@ -49,7 +43,6 @@ struct ForecastView: View {
                         }
                         .padding(20)
                         .onAppear {
-                            // Scroll to the top when data is refreshed
                             withAnimation {
                                 proxy.scrollTo(scrollToTopID, anchor: .top)
                             }

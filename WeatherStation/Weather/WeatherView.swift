@@ -14,27 +14,29 @@ struct WeatherView: View {
     var body: some View {
         ZStack {
             SetBackground()
-           
+            ScrollView{
+
             VStack{
                 Text ("Jeffs weather station")
-                    .font(.largeTitle)
+                    .font(.title)
                
                 Text("Located at 200 E Mountain Dr")
                     .font(.title3)
                 
                 Text("Santa Barbra, Ca")
                     .font(.title3)
-                          
-//               let time1: String = weather.first?.time ?? "n/a"
-//                Text("valid")
-//                    .background(updateIsValid(updateTimeString: time1) ?? false ? Color.green : Color.red)
+                
+                Image("ftn02")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 150)
+                    .cornerRadius(10)
                             
                 if let first = weather.first {
                     Text("Last update \(first.time) \(first.date)")
                             .font(.headline.bold())
                 }
         
-                ScrollView{
                     ForEach (weather, id: \.self) { i in
                        
                         VStack {
@@ -44,11 +46,12 @@ struct WeatherView: View {
                             HumidView(wthr: i)
                         }
                     }
-                    .task {
-                        await fetchData()
-                    }
+                   
                 }
             }
+        }
+        .task {
+            await fetchData()
         }
     }
     func fetchData() async {

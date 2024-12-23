@@ -17,23 +17,12 @@ struct WeatherView2: View {
             SetBackground()
            
             VStack{
-                VStack{
-                    Text ("Jeffs weather station")
-                        .font(.largeTitle)
-                    
-                    Text("Located at 200 E Mountain Dr")
-                        .font(.title3)
-                    
-                    Text("Santa Barbra, Ca")
-                        .font(.title3)
-                    
-                    if let first = weather.first {
-                        Text("Last update \(first.time) \(first.date)")
-                            .font(.headline.bold())
-                            
-                    }
-                }
+                screenHeader()
                 
+                if let first = weather.first {
+                    Text("Last update \(first.time) \(first.date)")
+                        .font(.headline.bold())
+                }
                 ScrollView{
                     ForEach (weather, id: \.self) { i in
                         VStack {
@@ -64,3 +53,24 @@ struct WeatherView2: View {
 }
 
 
+
+struct screenHeader: View {
+    var body: some View {
+        VStack{
+            Text ("Jeffs weather station")
+                .font(.title)
+            
+            Text("Located at 200 E Mountain Dr")
+                .font(.title3)
+            
+            Text("Santa Barbra, Ca")
+                .font(.title3)
+            
+            Image("ftn02")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(height: 150)
+                .cornerRadius(10)
+        }
+    }
+}
