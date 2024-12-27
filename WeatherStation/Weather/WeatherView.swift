@@ -36,7 +36,7 @@ struct WeatherView: View {
                     Text("Last update \(first.time) \(first.date)")
                             .font(.headline.bold())
                 }
-        
+                Text(weather.first?.time ?? "0000")
                     ForEach (weather, id: \.self) { i in
                        
                         VStack {

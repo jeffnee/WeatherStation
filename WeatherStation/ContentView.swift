@@ -18,7 +18,13 @@ struct ContentView: View {
                         Text("Home")}
                     }
             
-            WeatherView2()
+//            WeatherView2()
+//                .tabItem {
+//                    VStack{
+//                        Image(systemName: "house")
+//                        Text("Home 2")}
+//                    }
+            TideGraphView()
                 .tabItem {
                     VStack{
                         Image(systemName: "house")

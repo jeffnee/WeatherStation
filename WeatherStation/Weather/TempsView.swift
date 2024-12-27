@@ -16,7 +16,7 @@ struct TempsView: View {
             
             VStack(alignment: .leading) {
                 Text("Currently \(wthr.tempCurr)")
-                    .font(.system(size: 20).bold())
+                    .font(.system(size: 25).bold())
                 Text("Todays high \(wthr.tempHigh) at \(wthr.tempHighTime)")
                 Text("Todays low \(wthr.tempLow) at \(wthr.tempLowTime)")
                 Text("This Months high \(wthr.tempMonthHigh)")
