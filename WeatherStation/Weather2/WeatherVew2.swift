@@ -11,19 +11,19 @@ import SwiftUI
 struct WeatherView2: View {
     
     @State private var weather = [Weather]()
-        
+    @StateObject private var formatter = Formats()
+
     var body: some View {
         ZStack {
             SetBackground()
-           
-            VStack{
-                screenHeader()
-                
-                if let first = weather.first {
-                    Text("Last update \(first.time) \(first.date)")
-                        .font(.headline.bold())
-                }
-                ScrollView{
+            
+            ScrollView{
+                VStack{
+                    screenHeader()
+                    
+                    if let first = weather.first {
+                        Text("Last updated \(formatter.formatTime(first.time)) \(first.date)")
+                    }
                     ForEach (weather, id: \.self) { i in
                         VStack {
                             TempsView2(wthr: i)
@@ -32,10 +32,11 @@ struct WeatherView2: View {
                             HumidView2(wthr: i)
                         }
                         .padding()
+                        }
                     }
                     .task {
                         await fetchData()
-                    }
+                    
                 }
             }
         }

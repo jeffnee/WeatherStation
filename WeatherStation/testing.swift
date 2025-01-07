@@ -9,19 +9,23 @@ struct Tide: Identifiable {
 }
 
 // ViewModel to fetch tide data
+// : MARK Tide view model
 class TideViewModel: ObservableObject {
     @Published var tides: [Tide] = []
     private var cancellables = Set<AnyCancellable>()
 
     func fetchTides() {
-        let urlString = "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=predictions&application=NOS.COOPS.TAC.WL&begin_date=20241222&range=48&datum=MLLW&station=9411340&time_zone=lst_ldt&units=english&format=json&interval=hilo"
+        print("in func")
+        let urlString = "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=predictions&application=NOS.COOPS.TAC.WL&begin_date=20250106&range=48&datum=MLLW&station=9411340&time_zone=lst_ldt&units=english&format=json&interval=hilo"
         guard let url = URL(string: urlString) else { return }
-
+        print("url=--> \(url)")
         URLSession.shared.dataTaskPublisher(for: url)
             .map { $0.data }
             .decode(type: NOAAResponse.self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
+                print("COMPL=--->\(completion)")
+                      
                 switch completion {
                 case .failure(let error):
                     print("Error fetching tide data: \(error)")

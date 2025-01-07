@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
 
         TabView{
-            WeatherView()
+            WeatherView2()
                 .tabItem {
                     VStack{
                         Image(systemName: "house")

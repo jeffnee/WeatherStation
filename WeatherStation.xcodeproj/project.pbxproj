@@ -103,11 +103,11 @@
 				867E3BE72C83E9F20020C338 /* WindView.swift */,
 				867E3BE92C83EA0E0020C338 /* RainView.swift */,
 				866FE92E2CD5949D007E3161 /* weatherHeader.swift */,
-				867E3BF12C83EA870020C338 /* HumidView.swift */,
 				867E3BED2C83EA4D0020C338 /* ShowGraphImage.swift */,
+				867E3BF12C83EA870020C338 /* HumidView.swift */,
 				867E3C1D2C8BBAA80020C338 /* WeatherDataService.swift */,
-				867E3BF32C83EAA90020C338 /* WeatherModule.swift */,
 				86AF8BA32D1B8B6200F48B6C /* formatTime.swift */,
+				867E3BF32C83EAA90020C338 /* WeatherModule.swift */,
 				867E3BF52C850E9C0020C338 /* WeatherView.swift */,
 				867160A02CFFAE6E00D6B3E8 /* ValidateTime.swift */,
 			);

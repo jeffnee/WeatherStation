@@ -2,16 +2,16 @@
 //  WeatherVuewModel.swift
 //  WeatherStation
 //
-//  Created by Jeff Neely on 12/25/24.
+//  Created by Jeff Neely on /25/24.
 //
 
 import Foundation
 
-class WeatherVuewModel: ObservableObject {
+class WeatherViewModel: ObservableObject {
     
-    func formatTime() -> String {
-        print("Format!⛱️")
-        return "<"
+    func formatTime() -> Bool {
+        //   print("Format!⛱️")
+        return true
     }
     
 }

@@ -10,13 +10,15 @@ import SwiftUI
 struct WindView: View {
     var wthr: Weather
     
-    @EnvironmentObject var weatherViewModel: WeatherVuewModel
+    //@EnvironmentObject var weatherViewModel: WeatherViewModel
     
     var body: some View {
         VStack(alignment: .leading) {
             weatherHeader(title: "Wind", icon: "wind")
             
-//            weatherViewModel.formatTime()
+            //if weatherViewModel.formatTime(){
+                //Text("okkko")
+            //}
             VStack(alignment:.leading){
                 Text("Currently \(wthr.windCurr)  \(wthr.windDir)")
                     .font(.system(size: 20).bold())
