@@ -18,18 +18,20 @@ struct ContentView: View {
                         Text("Home")}
                     }
             
-//            WeatherView2()
-//                .tabItem {
-//                    VStack{
-//                        Image(systemName: "house")
-//                        Text("Home 2")}
-//                    }
+            WeatherView()
+                .tabItem {
+                    VStack{
+                        Image(systemName: "house")
+                        Text("Home 2")}
+                    }
+/*
             TideGraphView()
                 .tabItem {
                     VStack{
                         Image(systemName: "house")
                         Text("Home 2")}
                     }
+ */
             
            ForecastView()
                 .tabItem {

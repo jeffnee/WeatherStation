@@ -24,7 +24,7 @@ class TideViewModel: ObservableObject {
             .decode(type: NOAAResponse.self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
-                print("COMPL=--->\(completion)")
+                print("COMPL+*9+………….&&&=--->\(completion)")
                       
                 switch completion {
                 case .failure(let error):

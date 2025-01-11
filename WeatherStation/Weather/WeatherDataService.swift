@@ -17,7 +17,7 @@ struct WeatherDataService {
         do {
             let (data, error) = try await URLSession.shared.data(from: url)
 
-            print("Data received: \(data)") 
+            //print("Data received: \(data)")
 
             if let decodeResponse = try? JSONDecoder().decode([Weather].self, from: data) {
                 return decodeResponse

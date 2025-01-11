@@ -36,7 +36,7 @@ struct WeatherView2: View {
                     }
                     .task {
                         await fetchData()
-                    
+            
                 }
             }
         }
@@ -52,8 +52,6 @@ struct WeatherView2: View {
 #Preview {
     WeatherView2()
 }
-
-
 
 struct screenHeader: View {
     var body: some View {
@@ -71,7 +69,7 @@ struct screenHeader: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 150)
-                .cornerRadius(10)
+                .cornerRadius(13)
         }
     }
 }

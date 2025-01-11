@@ -35,7 +35,6 @@ class ForecastAPI {
                 let forecastData = try decoder.decode(ForecastData.self, from: data)
                 let daypart = forecastData.daypart?.first
                 completion(daypart)
-                print(forecastData)
             } catch {
                 print("Error decoding data: \(error)")
                 completion(nil)

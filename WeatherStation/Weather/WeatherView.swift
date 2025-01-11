@@ -14,6 +14,8 @@ struct WeatherView: View {
     var body: some View {
         ZStack {
             SetBackground()
+            screenHeader()
+            
             ScrollView{
                 VStack{
                     Text ("Jeffs weather station")
@@ -29,10 +31,9 @@ struct WeatherView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(height: 150)
-                        .cornerRadius(10)
+                        .cornerRadius(13)
                     
                     if let first = weather.first {
-                        Text(first.time)
                         Text("Last updated \(formatter.formatTime(first.time)) \(first.date)")
                     }
                  
