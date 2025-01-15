@@ -10,6 +10,7 @@ import SwiftUI
 
 struct WindView2: View {
     var wthr: Weather
+    @StateObject private var formatter = Formats()
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -20,7 +21,7 @@ struct WindView2: View {
             VStack(alignment:.leading){
                 Text("Currently \(wthr.windCurr)  \(wthr.windDir)")
                     .bold()
-                Text("Todays high \(wthr.windHigh) at \(wthr.windHighTime)")
+                Text("Todays high \(wthr.windHigh) at \(formatter.formatTime(wthr.windHighTime))")
                 Text("Months high \(wthr.windMonthHigh)")
                 Text("Years high \(wthr.windYearHigh)")
                 

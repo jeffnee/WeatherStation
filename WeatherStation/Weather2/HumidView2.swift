@@ -10,7 +10,8 @@ import SwiftUI
 
 struct HumidView2: View {
     var wthr: Weather
-   
+    @StateObject private var formatter = Formats()
+
     var body: some View {
         VStack(alignment: .leading) {
             divider()
@@ -20,8 +21,8 @@ struct HumidView2: View {
             VStack(alignment: .leading) {
                 Text("Currently \(wthr.humidCurr)")
                     .bold()
-                Text("Todays high \(wthr.humidHigh) at \(wthr.humidHighTime)")
-                Text("Todays low \(wthr.humidLow) at \(wthr.humidLowTime)")
+                Text("Todays high \(wthr.humidHigh) at \(formatter.formatTime(wthr.humidHighTime))")
+                Text("Todays low \(wthr.humidLow) at \(formatter.formatTime(wthr.humidLowTime))")
                 
                 let graphUrl = "https://thedriveweather.com/images/OutsideHumidityHistory.gif?v=1724635707"
                 ShowGraphImage(graphUrl: graphUrl)

@@ -15,15 +15,19 @@ struct WeatherView2: View {
 
     var body: some View {
         ZStack {
+            
             SetBackground()
+            let time1:String = weather.first?.time ?? "n/a"
+            let upDate:String = weather.first?.date ?? "n/a"
+            let upTime = formatter.formatTime(time1)
             
             ScrollView{
                 VStack{
-                    screenHeader()
                     
-                    if let first = weather.first {
-                        Text("Last updated \(formatter.formatTime(first.time)) \(first.date)")
-                    }
+                    screenHeader()
+                    Text("Lastupdated")
+                    Text("\(upTime) \(upDate)")
+                    
                     ForEach (weather, id: \.self) { i in
                         VStack {
                             TempsView2(wthr: i)
@@ -54,7 +58,12 @@ struct WeatherView2: View {
 }
 
 struct screenHeader: View {
+    
+    @State private var weather = [Weather]()
+    @StateObject private var formatter = Formats()
+    
     var body: some View {
+        
         VStack{
             Text ("Jeffs weather station")
                 .font(.title)
@@ -70,6 +79,10 @@ struct screenHeader: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 150)
                 .cornerRadius(13)
+            
+            if let first = weather.first {
+                Text("Last updated \(formatter.formatTime(first.time)) \(first.date)")
+            }
         }
     }
 }

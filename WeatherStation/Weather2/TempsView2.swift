@@ -10,18 +10,19 @@ import SwiftUI
 
 struct TempsView2: View {
     var wthr: Weather
+    @StateObject private var formatter = Formats()
+
     
     var body: some View {
         VStack(alignment: .leading) {
-            //divider()
 
             weatherHeader2(title: "Temperature", icon: "thermometer.medium")
             
             VStack(alignment: .leading) {
                 Text("Currently \(wthr.tempCurr)")
                     .bold()
-                Text("Todays high \(wthr.tempHigh) at \(wthr.tempHighTime)")
-                Text("Todays low \(wthr.tempLow) at \(wthr.tempLowTime)")
+                Text("Todays high \(wthr.tempHigh) at \(formatter.formatTime(wthr.tempHighTime))")
+                Text("Todays low \(wthr.tempLow) at \(formatter.formatTime(wthr.tempLowTime))")
                 Text("This Months high \(wthr.tempMonthHigh)")
                 Text("This Years high \(wthr.tempYearHigh)")
                 Text("This Years low \(wthr.tempYearLow)")
@@ -33,6 +34,5 @@ struct TempsView2: View {
             .padding(.leading, 32)
             .padding(.bottom,15)
         }
-        //.font(.system(size: 20))
     }
 }
