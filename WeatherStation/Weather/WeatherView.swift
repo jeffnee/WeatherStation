@@ -18,13 +18,14 @@ struct WeatherView: View {
             let time1:String = weather.first?.time ?? "n/a"
             let upDate:String = weather.first?.date ?? "n/a"
             let upTime = formatter.formatTime(time1)
+            
             ScrollView{
                 VStack{
                     ForEach (weather, id: \.self) {i in
                         VStack{
                             screenHeader()
-                            Text("Lastupdated")
-                            Text("\(upTime) \(upDate)")
+                            Text("Last updat:")
+                            Text(" \(upTime) \(upDate)")
 
                             TempsView(wthr: i)
                             WindView(wthr: i)

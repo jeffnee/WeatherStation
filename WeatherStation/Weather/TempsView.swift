@@ -21,8 +21,10 @@ struct TempsView: View {
                 Text("Todays high \(wthr.tempHigh) at \(formatter.formatTime(wthr.tempHighTime))")
                 Text("Todays low \(wthr.tempLow) at \(formatter.formatTime(wthr.tempLowTime))")
                 Text("This Months high \(wthr.tempMonthHigh)")
+                Text("This Months low  \(wthr.tempMonthLow)")
                 Text("This Years high \(wthr.tempYearHigh)")
-                
+                Text("This Years low \(wthr.tempYearLow)")
+
                 let graphUrl = "https://thedriveweather.com/images/OutsideTempHistory.gif?v=1724422106"
                 ShowGraphImage(graphUrl: graphUrl)
             }

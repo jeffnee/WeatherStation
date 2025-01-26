@@ -10,7 +10,7 @@ struct weatherHeader: View {
     
     var title: String
     var icon: String
-
+    
     var body: some View {
         HStack(alignment: .top) {
             Text("\(title)")

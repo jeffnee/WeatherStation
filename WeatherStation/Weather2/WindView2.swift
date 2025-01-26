@@ -14,7 +14,7 @@ struct WindView2: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            divider()
+        //divider()
             
             weatherHeader2(title: "Wind", icon: "wind")
             

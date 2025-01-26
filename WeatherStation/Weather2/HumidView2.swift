@@ -14,7 +14,7 @@ struct HumidView2: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            divider()
+        //Divider()
             
             weatherHeader2(title: "Humidity", icon: "humidity.fill")
             

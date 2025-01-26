@@ -10,7 +10,7 @@ import SwiftUI
 struct HumidView: View {
     var wthr: Weather
     @StateObject private var formatter = Formats()
-
+ 
     var body: some View {
         VStack(alignment: .leading) {
             weatherHeader(title: "Humidity", icon: "humidity.fill")

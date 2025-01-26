@@ -15,18 +15,20 @@ struct WeatherView2: View {
 
     var body: some View {
         ZStack {
-            
             SetBackground()
-            let time1:String = weather.first?.time ?? "n/a"
-            let upDate:String = weather.first?.date ?? "n/a"
-            let upTime = formatter.formatTime(time1)
+            let lastUpdateDate:String = weather.first?.date ?? "n/a"
+            
+            let lastUpdateTime = formatter.formatTime( weather.first?.time ?? "n/a")
+            
+            let timeIsRecent = formatter.timeIsOk(dateString: lastUpdateDate, timeString: lastUpdateTime)
             
             ScrollView{
                 VStack{
-                    
                     screenHeader()
-                    Text("Lastupdated")
-                    Text("\(upTime) \(upDate)")
+                    Text("Last update:")
+                    
+                    Text(" \(lastUpdateTime) \(lastUpdateDate)")
+                        .foregroundColor( timeIsRecent ? .green : .red)
                     
                     ForEach (weather, id: \.self) { i in
                         VStack {
@@ -40,7 +42,6 @@ struct WeatherView2: View {
                     }
                     .task {
                         await fetchData()
-            
                 }
             }
         }
@@ -86,3 +87,4 @@ struct screenHeader: View {
         }
     }
 }
+
