@@ -1,3 +1,4 @@
+ 
 //
 //  WeatherVew2.swift
 //  WeatherStation
@@ -14,13 +15,15 @@ struct WeatherView2: View {
     @StateObject private var formatter = Formats()
 
     var body: some View {
+        
+        let lastUpdateDate:String = weather.first?.date ?? "n/a"
+        
+        let lastUpdateTime = formatter.formatTime( weather.first?.time ?? "n/a")
+        let timeIsRecent = formatter.isWithinThirtyMinutes(date: lastUpdateDate, time: lastUpdateTime)
         ZStack {
             SetBackground()
-            let lastUpdateDate:String = weather.first?.date ?? "n/a"
             
-            let lastUpdateTime = formatter.formatTime( weather.first?.time ?? "n/a")
-            
-            let timeIsRecent = formatter.timeIsOk(dateString: lastUpdateDate, timeString: lastUpdateTime)
+           
             
             ScrollView{
                 VStack{

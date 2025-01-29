@@ -11,36 +11,60 @@ class Formats: ObservableObject {
     }
 
     func timeIsOk(dateString: String, timeString: String) -> Bool {
-       //let dateString = "01-25-2025"
-        print("date->\(dateString) time-->\(timeString)")
+        
+        //let dateString = "01-27-2025"
+        print("Input date: \(dateString), time: \(timeString)")
+        
         let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd-yyyy HH:mm a"
         
-        print(type(of: dateString))
-        
-        dateFormatter.dateFormat = "mm-dd-yyyy hh:mm a"
-        
-        // Combine date and time strings
         let combinedString = "\(dateString) \(timeString)"
-        print("combnd-->\(combinedString)")
-
-        // Convert the combined string to a Date object
+        print("Combined date and time: \(combinedString)")
+        
         guard let inputDate = dateFormatter.date(from: combinedString) else {
-            print("Invalid date format")
+            print("Failed to parse combined date and time: \(combinedString)")
             return false
         }
         
-        // Get the current date and time
         let currentDate = Date()
-        
-        // Calculate the time interval between the current date and input date
         let timeInterval = currentDate.timeIntervalSince(inputDate)
-        print("iterval-->\(timeInterval)")
-        // Check if the time interval is within 30 minutes (1800 seconds)
-        if timeInterval > 0 && timeInterval <= 1800 {
-            return true
-        } else {
+        print("Time interval: \(timeInterval) seconds")
+        
+        return timeInterval > 0 && timeInterval <= 1800
+    }
+
+
+    func isWithinThirtyMinutes(date: String, time: String) -> Bool {
+        print("📥 Input - Date: \(date), Time: \(time)")
+        
+        // Create date formatter
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        
+        // Format the input strings into a full date/time
+        dateFormatter.dateFormat = "MM-dd-yy hh:mm a"
+        let combinedDateTime = "\(date) \(time)"
+        print("🔄 Combined date and time string: \(combinedDateTime)")
+        
+        // Try to create Date object from the combined string
+        guard let inputDate = dateFormatter.date(from: combinedDateTime) else {
+            print("❌ Failed to parse date: \(combinedDateTime)")
             return false
         }
+        print("✅ Successfully parsed date: \(inputDate)")
+        
+        // Get current time
+        let currentDate = Date()
+        print("⏰ Current time: \(currentDate)")
+        
+        // Calculate time difference in seconds
+        let timeDifference = abs(currentDate.timeIntervalSince(inputDate))
+        print("⏱️ Time difference: \(timeDifference) seconds (\(timeDifference / 60) minutes)")
+        
+        let isWithin = timeDifference <= 1800
+        print(isWithin ? "✅ Within 30 minutes" : "❌ Not within 30 minutes")
+        
+        return isWithin
     }
 }
 
