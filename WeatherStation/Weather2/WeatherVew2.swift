@@ -13,6 +13,7 @@ struct WeatherView2: View {
     
     @State private var weather = [Weather]()
     @StateObject private var formatter = Formats()
+    @State private var timer = Timer.publish(every: 30, on: .main, in: .common).autoconnect()
 
     var body: some View {
         
@@ -29,9 +30,10 @@ struct WeatherView2: View {
                 VStack{
                     screenHeader()
                     Text("Last update:")
+                        .foregroundColor( timeIsRecent ?  .primary : .red)
                     
                     Text(" \(lastUpdateTime) \(lastUpdateDate)")
-                        .foregroundColor( timeIsRecent ? .green : .red)
+                        .foregroundColor( timeIsRecent ?  .primary : .red)
                     
                     ForEach (weather, id: \.self) { i in
                         VStack {
@@ -41,11 +43,19 @@ struct WeatherView2: View {
                             HumidView2(wthr: i)
                         }
                         .padding()
-                        }
+                        
                     }
-                    .task {
-                        await fetchData()
                 }
+            }
+        }
+        .onAppear {
+            Task {
+                await fetchData()
+            }
+        }
+        .onReceive(timer) { _ in
+            Task {
+                await fetchData()
             }
         }
     }
@@ -62,10 +72,6 @@ struct WeatherView2: View {
 }
 
 struct screenHeader: View {
-    
-    @State private var weather = [Weather]()
-    @StateObject private var formatter = Formats()
-    
     var body: some View {
         
         VStack{
@@ -75,7 +81,7 @@ struct screenHeader: View {
             Text("Located at 200 E Mountain Dr")
                 .font(.title3)
             
-            Text("Santa Barbra, Ca")
+            Text("Santa Barbara, Ca")
                 .font(.title3)
             
             Image("ftn02")
@@ -83,10 +89,6 @@ struct screenHeader: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 150)
                 .cornerRadius(13)
-            
-            if let first = weather.first {
-                Text("Last updated \(formatter.formatTime(first.time)) \(first.date)")
-            }
         }
     }
 }
