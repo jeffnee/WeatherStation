@@ -12,7 +12,7 @@ class Formats: ObservableObject {
 
     func timeIsOk(dateString: String, timeString: String) -> Bool {
         
-        //let dateString = "01-27-2025"
+        let dateString = "01-27-2025"
         print("Input date: \(dateString), time: \(timeString)")
         
         let dateFormatter = DateFormatter()

@@ -1,0 +1,20 @@
+
+Showing All Issues
+
+Build target WeatherStation of project WeatherStation with configuration Release
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'WeatherStation' from project 'WeatherStation')
+
+
+Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone
+
+Validate /Users/jeffneely/Library/Developer/Xcode/DerivedData/WeatherStation-fmokgwvbanpilkciskknkvjsccku/Build/Intermediates.noindex/ArchiveIntermediates/WeatherStation/InstallationBuildProductsLocation/Applications/WeatherStation.app (in target 'WeatherStation' from project 'WeatherStation')
+    cd /Users/jeffneely/swift/WeatherStation
+    builtin-validationUtility /Users/jeffneely/Library/Developer/Xcode/DerivedData/WeatherStation-fmokgwvbanpilkciskknkvjsccku/Build/Intermediates.noindex/ArchiveIntermediates/WeatherStation/InstallationBuildProductsLocation/Applications/WeatherStation.app -validate-for-store -infoplist-subpath Info.plist
+
+warning: A launch configuration or launch storyboard or xib must be provided unless the app requires full screen. (in target 'WeatherStation' from project 'WeatherStation')
+
+A launch configuration or launch storyboard or xib must be provided unless the app requires full screen.
+
+
+
+Build succeeded    1/30/25, 5:55 PM    14.0 seconds

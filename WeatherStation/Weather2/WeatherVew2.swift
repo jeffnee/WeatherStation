@@ -20,11 +20,11 @@ struct WeatherView2: View {
         let lastUpdateDate:String = weather.first?.date ?? "n/a"
         
         let lastUpdateTime = formatter.formatTime( weather.first?.time ?? "n/a")
+        
         let timeIsRecent = formatter.isWithinThirtyMinutes(date: lastUpdateDate, time: lastUpdateTime)
+        
         ZStack {
             SetBackground()
-            
-           
             
             ScrollView{
                 VStack{
