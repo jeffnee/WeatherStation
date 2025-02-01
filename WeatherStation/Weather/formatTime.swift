@@ -36,7 +36,7 @@ class Formats: ObservableObject {
 
     func isWithinThirtyMinutes(date: String, time: String) -> Bool {
         print("📥 Input - Date: \(date), Time: \(time)")
-        
+        //let date = "01-22-25"
         // Create date formatter
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
