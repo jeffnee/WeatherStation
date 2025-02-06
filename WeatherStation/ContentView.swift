@@ -25,13 +25,13 @@ struct ContentView: View {
                         Text("Home 2")}
                     }
 /*
-            TideGraphView()
+            DailyForecastView()
                 .tabItem {
                     VStack{
                         Image(systemName: "house")
                         Text("Home 2")}
-                    }
- */
+                    }*/
+ 
             
            ForecastView()
                 .tabItem {

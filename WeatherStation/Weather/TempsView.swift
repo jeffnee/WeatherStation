@@ -25,7 +25,7 @@ struct TempsView: View {
                 Text("This Years high \(wthr.tempYearHigh)")
                 Text("This Years low \(wthr.tempYearLow)")
 
-                let graphUrl = "https://thedriveweather.com/images/OutsideTempHistory.gif?v=1724422106"
+                let graphUrl = "https://thedriveweather.com/images/OutsideTempHistory.gif"
                 ShowGraphImage(graphUrl: graphUrl)
             }
             .foregroundColor(.black)

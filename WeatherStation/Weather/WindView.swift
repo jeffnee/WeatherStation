@@ -22,7 +22,7 @@ struct WindView: View {
                 Text("Months high \(wthr.windMonthHigh)")
                 Text("Years high \(wthr.windYearHigh)")
                 
-                let graphUrl = "https://thedriveweather.com/images/HiWindSpeedHistory.gif?v=1724625500"
+                let graphUrl = "https://thedriveweather.com/images/HiWindSpeedHistory.gif"
                 ShowGraphImage(graphUrl: graphUrl)
             }
             .foregroundColor(.black)

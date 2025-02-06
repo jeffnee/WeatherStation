@@ -24,5 +24,6 @@ struct ShowGraphImage: View {
             .cornerRadius(15)
             
         }
+       
     }
 }

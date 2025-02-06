@@ -41,6 +41,7 @@
 /* Begin PBXFileReference section */
 		862CDD272D0B8D15003CEA21 /* RainView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainView2.swift; sourceTree = "<group>"; };
 		862CDD292D0B9112003CEA21 /* HumidView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumidView2.swift; sourceTree = "<group>"; };
+		863429742D51D35700C55D35 /* WeatherStation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = WeatherStation.xcodeproj; sourceTree = SOURCE_ROOT; };
 		866FE92E2CD5949D007E3161 /* weatherHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherHeader.swift; sourceTree = "<group>"; };
 		867160A02CFFAE6E00D6B3E8 /* ValidateTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateTime.swift; sourceTree = "<group>"; };
 		867160CE2D066B2100D6B3E8 /* WeatherVew2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVew2.swift; sourceTree = "<group>"; };
@@ -88,8 +89,8 @@
 			children = (
 				867160D12D066D1D00D6B3E8 /* TempsView2.swift */,
 				867160D62D08E4CF00D6B3E8 /* WindView2.swift */,
-				867160D32D06766E00D6B3E8 /* WeatherHeader2.swift */,
 				862CDD292D0B9112003CEA21 /* HumidView2.swift */,
+				867160D32D06766E00D6B3E8 /* WeatherHeader2.swift */,
 				862CDD272D0B8D15003CEA21 /* RainView2.swift */,
 				867160CE2D066B2100D6B3E8 /* WeatherVew2.swift */,
 			);
@@ -145,6 +146,7 @@
 				867E3BDB2C83E8960020C338 /* Assets.xcassets */,
 				867E3BDD2C83E8960020C338 /* Preview Content */,
 				86AF8BBD2D1CFA9800F48B6C /* WeatherVuewModel.swift */,
+				863429742D51D35700C55D35 /* WeatherStation.xcodeproj */,
 			);
 			path = WeatherStation;
 			sourceTree = "<group>";
@@ -166,6 +168,11 @@
 				867E3C1B2C87F0150020C338 /* ForecastDataService.swift */,
 			);
 			path = Forecast;
+			sourceTree = "<group>";
+		};
+		86FAE1892D5323B4001BDBD0 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +221,12 @@
 			mainGroup = 867E3BCB2C83E8950020C338;
 			productRefGroup = 867E3BD52C83E8950020C338 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 86FAE1892D5323B4001BDBD0 /* Products */;
+					ProjectRef = 863429742D51D35700C55D35 /* WeatherStation.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				867E3BD32C83E8950020C338 /* WeatherStation */,

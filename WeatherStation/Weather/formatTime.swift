@@ -10,16 +10,24 @@ class Formats: ObservableObject {
         return formattedTime
     }
 
+/*
     func timeIsOk(dateString: String, timeString: String) -> Bool {
-        
-        let dateString = "01-27-2025"
+        // Add debug print to see input values
         print("Input date: \(dateString), time: \(timeString)")
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM-dd-yyyy HH:mm a"
         
+        // First, parse the date string
+        dateFormatter.dateFormat = "yyyy-MM-dd"  // Assuming input format is like "2024-01-26"
+        
+        guard let date = dateFormatter.date(from: dateString) else {
+            print("Failed to parse date: \(dateString)")
+            return false
+        }
+        
+        // Now combine with time and parse again
+        dateFormatter.dateFormat = "yyyy-MM-dd hh:mma"
         let combinedString = "\(dateString) \(timeString)"
-        print("Combined date and time: \(combinedString)")
         
         guard let inputDate = dateFormatter.date(from: combinedString) else {
             print("Failed to parse combined date and time: \(combinedString)")
@@ -32,7 +40,7 @@ class Formats: ObservableObject {
         
         return timeInterval > 0 && timeInterval <= 1800
     }
-
+*/
 
     func isWithinThirtyMinutes(date: String, time: String) -> Bool {
         print("📥 Input - Date: \(date), Time: \(time)")
@@ -66,5 +74,10 @@ class Formats: ObservableObject {
         
         return isWithin
     }
+ /*
+    func delayExec(){ dispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+        print("delay")
+        }
+    }*/
 }
 

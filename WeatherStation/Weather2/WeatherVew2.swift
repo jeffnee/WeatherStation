@@ -13,7 +13,8 @@ struct WeatherView2: View {
     
     @State private var weather = [Weather]()
     @StateObject private var formatter = Formats()
-    @State private var timer = Timer.publish(every: 30, on: .main, in: .common).autoconnect()
+    
+    @State private var timer = Timer.publish(every: 240, on: .main, in: .common).autoconnect()
 
     var body: some View {
         
@@ -61,7 +62,7 @@ struct WeatherView2: View {
     }
     func fetchData() async {
         if let fetchedWeather = await WeatherDataService.fetchWeatherData() {
-            weather = fetchedWeather
+            weather = fetchedWeather.map { $0 }
         }
     }
     

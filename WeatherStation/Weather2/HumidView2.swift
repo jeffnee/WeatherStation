@@ -4,8 +4,6 @@
 //
 //  Created by Jeff Neely on 12/12/24.
 //
-
-
 import SwiftUI
 
 struct HumidView2: View {
@@ -24,7 +22,7 @@ struct HumidView2: View {
                 Text("Todays high \(wthr.humidHigh) at \(formatter.formatTime(wthr.humidHighTime))")
                 Text("Todays low \(wthr.humidLow) at \(formatter.formatTime(wthr.humidLowTime))")
                 
-                let graphUrl = "https://thedriveweather.com/images/OutsideHumidityHistory.gif?v=1724635707"
+                let graphUrl = "https://thedriveweather.com/images/OutsideHumidityHistory.gif"
                 ShowGraphImage(graphUrl: graphUrl)
             }
             .font(.system(size: 25))

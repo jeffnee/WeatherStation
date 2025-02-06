@@ -24,7 +24,7 @@ struct RainView2: View {
                 Text("This season total \(wthr.rainSeason)")
                 Text("Current rate \(wthr.rainRate)")
                 
-                let graphUrl = "https://thedriveweather.com/images/RainHistory.gif?v=1724625810"
+                let graphUrl = "https://thedriveweather.com/images/RainHistory.gif"
                 ShowGraphImage(graphUrl: graphUrl)
             }
             .font(.system(size: 25))
