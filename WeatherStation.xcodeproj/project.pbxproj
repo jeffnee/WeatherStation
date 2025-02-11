@@ -101,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				867E3BE52C83E9C80020C338 /* TempsView.swift */,
+				867E3BD92C83E8950020C338 /* ContentView.swift */,
 				867E3BE72C83E9F20020C338 /* WindView.swift */,
 				867E3BE92C83EA0E0020C338 /* RainView.swift */,
 				866FE92E2CD5949D007E3161 /* weatherHeader.swift */,
@@ -137,7 +138,6 @@
 				869CDAB42CE8352C00950F12 /* Info.plist */,
 				867E3BD72C83E8950020C338 /* WeatherStationApp.swift */,
 				867160D02D066CAA00D6B3E8 /* Weather2 */,
-				867E3BD92C83E8950020C338 /* ContentView.swift */,
 				86AF8BA12D18EBD400F48B6C /* testing.swift */,
 				867BBC392CBF2CA600C49420 /* Weather */,
 				867E3BEF2C83EA690020C338 /* extensions.swift */,

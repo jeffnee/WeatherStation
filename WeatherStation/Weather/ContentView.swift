@@ -24,13 +24,13 @@ struct ContentView: View {
                         Image(systemName: "house")
                         Text("Home 2")}
                     }
-/*
-            DailyForecastView()
+
+            ImagesView()
                 .tabItem {
                     VStack{
                         Image(systemName: "house")
                         Text("Home 2")}
-                    }*/
+                    }
  
             
            ForecastView()
