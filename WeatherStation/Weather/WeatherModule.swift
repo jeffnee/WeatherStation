@@ -20,7 +20,6 @@ import Foundation
 struct Weather: Hashable, Codable {
     let date: String
     var time: String
-    let lastUpdateIsValid: String
     let tempCurr: String
     let tempHigh: String
     let tempHighTime: String
@@ -46,10 +45,5 @@ struct Weather: Hashable, Codable {
     let humidHighTime: String
     let humidLow: String
     let humidLowTime: String
-    
-    func formatTime(time:String) -> String {
-        return "xzxzx"
-    }
-    
 }
 

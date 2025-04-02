@@ -8,6 +8,7 @@
 import Foundation
 
 class ForecastAPI {
+ 
     private let apiUrl = "https://api.weather.com/v3/wx/forecast/daily/5day?postalKey=93108:US&units=e&language=en-US&format=json&apiKey=be98b4148d7443ca98b4148d7473cac2"
     
     func fetchForecastData(completion: @escaping (Daypart?) -> Void) {
@@ -19,7 +20,7 @@ class ForecastAPI {
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
-                print("Error fetching weather data: \(error)")
+                print("Error fetching forecast data: \(error)")
                 completion(nil)
                 return
             }
@@ -44,5 +45,4 @@ class ForecastAPI {
         task.resume()
     }
 }
-
 

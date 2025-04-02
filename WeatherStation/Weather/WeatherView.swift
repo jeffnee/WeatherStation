@@ -11,7 +11,8 @@ struct WeatherView: View {
     
     @State private var weather = [Weather]()
     @StateObject private var formatter = Formats()
-
+    let weatherService = WeatherDataService()
+    
     var body: some View {
         ZStack {
             SetBackground()
@@ -24,9 +25,9 @@ struct WeatherView: View {
                     ForEach (weather, id: \.self) {i in
                         VStack{
                             screenHeader()
-                            Text("Last updat:")
+                            Text("Last updated:")
                             Text(" \(upTime) \(upDate)")
-
+                            
                             TempsView(wthr: i)
                             WindView(wthr: i)
                             RainView(wthr: i)
@@ -35,22 +36,30 @@ struct WeatherView: View {
                         .padding()
                     }
                 }
-                .task {
-                     await fetchData()
+                .onAppear {
+                    weatherService.fetchWeatherData { weather in
+                        if let weather = weather {
+                            print(weather)
+                        } else {
+                            print("error getting weather")
+                        }
                         
                     }
                 }
-               
-            }
-        }
-        func fetchData() async {
-            if let fetchedWeather = await WeatherDataService.fetchWeatherData() {
-                weather = fetchedWeather
+                
             }
         }
         
     }
-    
-    #Preview {
-        WeatherView()
+        
     }
+    
+#Preview {
+    WeatherView()
+}
+        //fetchWeatherData { weather in
+        //    if let weatherData = weatherData {
+        //        print("Current temperature: \(weatherData.tempCurr)")
+        //    } else {
+        //        print("Failed to load weather data")
+        //    }}

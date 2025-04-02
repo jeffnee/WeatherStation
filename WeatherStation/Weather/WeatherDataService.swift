@@ -3,30 +3,49 @@
 //  WeatherStation
 //
 //  Created by Jeff Neely on 9/6/24.
-//
+///
 
 import Foundation
 
-struct WeatherDataService {
-    static func fetchWeatherData() async -> [Weather]? {
-        guard let url = URL(string: "https://thedriveweather.com/api") else {
-            print("Bad URL")
-            return nil
+class WeatherDataAPI {
+    func fetchWeatherData(completion: @escaping (Weather?) -> Void) {
+        guard let url = URL(string: "https://jeffstestspace.a2hosted.com/api") else {
+            print("Invalid URL")
+            completion(nil)
+            return
         }
-
-        do {
-            let (data, error) = try await URLSession.shared.data(from: url)
-
-            //print("Data received: \(data)")
-
-            if let decodeResponse = try? JSONDecoder().decode([Weather].self, from: data) {
-                return decodeResponse
-            } else {
-                print("Failed to decode response: \(error.debugDescription)")
+        
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                print("Error fetching data: \(error)")
+                completion(nil)
+                return
             }
-        } catch {
-            print("Request failed with error: \(error.localizedDescription)")
+            
+            guard let data = data else {
+                print("No data received")
+                completion(nil)
+                return
+            }
+            
+            do {
+                let weather = try JSONDecoder().decode(Weather.self, from: data)
+                completion(weather)
+            } catch {
+                print("Error decoding JSON: \(error)")
+                completion(nil)
+            }
         }
-        return nil
+        
+        task.resume()
     }
 }
+// Example usage
+//fetchWeatherData { weatherData in
+//    if let weatherData = weatherData {
+//        print("Current temperature: \(weatherData.tempCurr)")
+//    } else {
+//        print("Failed to load weather data")
+//    }
+//}
+

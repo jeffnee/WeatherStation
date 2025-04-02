@@ -15,14 +15,16 @@ struct WeatherView2: View {
     @StateObject private var formatter = Formats()
     
     @State private var timer = Timer.publish(every: 240, on: .main, in: .common).autoconnect()
+    
+    //let weatherService = WeatherDataService()
 
     var body: some View {
         
-        let lastUpdateDate:String = weather.first?.date ?? "n/a"
+        // let lastUpdateDate:String = weather.first?.date ?? "n/a"
         
-        let lastUpdateTime = formatter.formatTime( weather.first?.time ?? "n/a")
+        //        let lastUpdateTime = formatter.formatTime( weather.first?.time ?? "n/a")
         
-        let timeIsRecent = formatter.isWithinThirtyMinutes(date: lastUpdateDate, time: lastUpdateTime)
+        //        let timeIsRecent = formatter.isWithinThirtyMinutes(date: lastUpdateDate, time: lastUpdateTime)
         
         ZStack {
             SetBackground()
@@ -30,14 +32,17 @@ struct WeatherView2: View {
             ScrollView{
                 VStack{
                     screenHeader()
-                    Text("Last update:")
-                        .foregroundColor( timeIsRecent ?  .primary : .red)
+                    //                    Text("Last update:")
+                    //                        .foregroundColor( timeIsRecent ?  .primary :\.red)
                     
-                    Text(" \(lastUpdateTime) \(lastUpdateDate)")
-                        .foregroundColor( timeIsRecent ?  .primary : .red)
+                    //                    Text(" \(lastUpdateTime) \(lastUpdateDate)")
+                    //                        .foregroundColor( timeIsRecent ?  .primary : .red)
+                    Text("TEMP-curr")
+                    
                     
                     ForEach (weather, id: \.self) { i in
                         VStack {
+                            Text("TEMP-CURR\(i.tempCurr)")
                             TempsView2(wthr: i)
                             WindView2(wthr: i)
                             RainView2(wthr: i)
@@ -47,26 +52,10 @@ struct WeatherView2: View {
                         
                     }
                 }
-            }
-        }
-        .onAppear {
-            Task {
-                await fetchData()
-            }
-        }
-        .onReceive(timer) { _ in
-            Task {
-                await fetchData()
+                
             }
         }
     }
-    func fetchData() async {
-        if let fetchedWeather = await WeatherDataService.fetchWeatherData() {
-            weather = fetchedWeather.map { $0 }
-        }
-    }
-    
-
 }
 #Preview {
     WeatherView2()
