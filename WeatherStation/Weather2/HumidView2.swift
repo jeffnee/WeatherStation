@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct HumidView2: View {
-    var wthr: Weather
+    var wthr: WeatherD
     @StateObject private var formatter = Formats()
 
     var body: some View {

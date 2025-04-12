@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RainView: View {
-    var wthr: Weather
+    var wthr: WeatherD
     
     var body: some View {
     VStack(alignment: .leading) {

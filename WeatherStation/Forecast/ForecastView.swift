@@ -54,13 +54,13 @@ struct ForecastView: View {
             }
         }
         .onAppear {
-            fetchWeatherData()
+            fetchForecastData()
         }
     }
 
-    private func fetchWeatherData() {
+    private func fetchForecastData() {
         // Trigger API call to refresh data
-        ForecastAPI().fetchForecastData { fetchedDaypart in
+        ForecastAPI().getForecastData { fetchedDaypart in
             DispatchQueue.main.async {
                 self.daypart = fetchedDaypart
                 self.scrollToTopID = UUID() // Reset scroll position identifier

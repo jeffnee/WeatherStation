@@ -1,48 +1,38 @@
- 
-//
-//  WeatherVew2.swift
-//  WeatherStation
-//
-//  Created by Jeff Neely on 12/8/24.
-//
-
-
-import SwiftUI
+ import SwiftUI
 
 struct WeatherView2: View {
     
-    @State private var weather = [Weather]()
+    @State private var weather = [WeatherD]()
     @StateObject private var formatter = Formats()
     
     @State private var timer = Timer.publish(every: 240, on: .main, in: .common).autoconnect()
     
-    //let weatherService = WeatherDataService()
-
+        ///let weatherService = WeatherDataService()
+     
     var body: some View {
         
-        // let lastUpdateDate:String = weather.first?.date ?? "n/a"
-        
-        //        let lastUpdateTime = formatter.formatTime( weather.first?.time ?? "n/a")
-        
-        //        let timeIsRecent = formatter.isWithinThirtyMinutes(date: lastUpdateDate, time: lastUpdateTime)
         
         ZStack {
+             let lastUpdateDate:String = weather.first?.date ?? "n/a"
+             
+             let lastUpdateTime = formatter.formatTime( weather.first?.time ?? "n/a")
+             
+             let timeIsRecent = formatter.isWithinThirtyMinutes(date: lastUpdateDate, time: lastUpdateTime)
             SetBackground()
             
             ScrollView{
                 VStack{
                     screenHeader()
-                    //                    Text("Last update:")
-                    //                        .foregroundColor( timeIsRecent ?  .primary :\.red)
+                        Text("Last update:")
+                            .foregroundColor( timeIsRecent ? .primary : .red)
                     
-                    //                    Text(" \(lastUpdateTime) \(lastUpdateDate)")
-                    //                        .foregroundColor( timeIsRecent ?  .primary : .red)
-                    Text("TEMP-curr")
+                        Text(" \(lastUpdateTime) \(lastUpdateDate)")
+                            .foregroundColor( timeIsRecent ? .primary : .red)
                     
                     
-                    ForEach (weather, id: \.self) { i in
+                    ForEach (weather) { i in
                         VStack {
-                            Text("TEMP-CURR\(i.tempCurr)")
+                            
                             TempsView2(wthr: i)
                             WindView2(wthr: i)
                             RainView2(wthr: i)
@@ -54,7 +44,21 @@ struct WeatherView2: View {
                 }
                 
             }
+            //.onAppear {
+                //fetchWeatherData()
+            }
+        .onAppear {
+            fetchWeatherData()
         }
+    }
+     private func fetchWeatherData() {
+        WeatherAPI().getWeatherData { fetchedWeather in
+            DispatchQueue.main.async {
+                self.weather = fetchedWeather
+                 print("WD=----------> \(fetchedWeather)")
+            }
+        }
+        
     }
 }
 #Preview {

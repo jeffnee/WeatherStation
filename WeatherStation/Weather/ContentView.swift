@@ -17,13 +17,13 @@ struct ContentView: View {
                         Image(systemName: "house")
                         Text("Home")}
                     }
-            
-            WeatherView()
-                .tabItem {
-                    VStack{
-                        Image(systemName: "house")
-                        Text("Home 2")}
-                    }
+//            
+//            WeatherView()
+//                .tabItem {
+//                    VStack{
+//                        Image(systemName: "house")
+//                        Text("Home 2")}
+//                    }
 
             ImagesView()
                 .tabItem {
