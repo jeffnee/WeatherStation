@@ -25,6 +25,8 @@ struct WeatherD: Hashable, Codable, Identifiable {
     let rainMonth: String
     let rainSeason: String
     let rainRate: String
+    let barCurr: String
+    let barTrend: String
     let humidCurr: String
     let humidHigh: String
     let humidHighTime: String

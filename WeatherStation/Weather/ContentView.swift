@@ -17,27 +17,19 @@ struct ContentView: View {
                         Image(systemName: "house")
                         Text("Home")}
                     }
-//            
-//            WeatherView()
-//                .tabItem {
-//                    VStack{
-//                        Image(systemName: "house")
-//                        Text("Home 2")}
-//                    }
 
-            ImagesView()
-                .tabItem {
-                    VStack{
-                        Image(systemName: "house")
-                        Text("Home 2")}
-                    }
- 
-            
            ForecastView()
                 .tabItem {
                     VStack{
                         Image(systemName: "calendar.badge.clock")
                         Text("Forecast")}
+                    }
+            
+            ImagesView()
+                .tabItem {
+                    VStack{
+                        Image(systemName: "photo")
+                        Text("Images")}
                     }
             
             AboutView()

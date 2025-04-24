@@ -14,7 +14,7 @@ struct WindView2: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-        //divider()
+            //divider()
             
             weatherHeader2(title: "Wind", icon: "wind")
             
@@ -25,13 +25,12 @@ struct WindView2: View {
                 Text("Months high \(wthr.windMonthHigh)")
                 Text("Years high \(wthr.windYearHigh)")
                 
-                let graphUrl = "https://thedriveweather.com/images/HiWindSpeedHistory.gif?v=1724625500"
+                let graphUrl = "https://thedriveweather.com/images/HiWindSpeedHistory.gif"
                 ShowGraphImage(graphUrl: graphUrl)
             }
             .font(.system(size: 25))
             .padding(.leading, 35)
             .padding(.bottom,25)
         }
-        //.font(.system(size: 20))
     }
 }

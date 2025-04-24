@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		862CDD282D0B8D35003CEA21 /* RainView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862CDD272D0B8D15003CEA21 /* RainView2.swift */; };
 		862CDD2A2D0B9140003CEA21 /* HumidView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862CDD292D0B9112003CEA21 /* HumidView2.swift */; };
+		863A36012DB1D8FE00914A23 /* BarView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A36002DB1D8FE00914A23 /* BarView2.swift */; };
 		866FE92F2CD5949D007E3161 /* weatherHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866FE92E2CD5949D007E3161 /* weatherHeader.swift */; };
 		867160A12CFFAE6E00D6B3E8 /* ValidateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867160A02CFFAE6E00D6B3E8 /* ValidateTime.swift */; };
 		867160CF2D066B2100D6B3E8 /* WeatherVew2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867160CE2D066B2100D6B3E8 /* WeatherVew2.swift */; };
@@ -32,8 +33,7 @@
 		867E3BFA2C851C840020C338 /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867E3BF92C851C840020C338 /* ForecastView.swift */; };
 		867E3C1C2C87F0150020C338 /* ForecastDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867E3C1B2C87F0150020C338 /* ForecastDataService.swift */; };
 		867E3C1E2C8BBAA80020C338 /* WeatherDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867E3C1D2C8BBAA80020C338 /* WeatherDataService.swift */; };
-		8690C1B42DA72575006CEB9A /* dsneww.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8690C1B32DA72575006CEB9A /* dsneww.swift */; };
-		86AF8BA22D18EBD400F48B6C /* testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8BA12D18EBD400F48B6C /* testing.swift */; };
+		86AF8BA22D18EBD400F48B6C /* ImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8BA12D18EBD400F48B6C /* ImagesView.swift */; };
 		86AF8BA42D1B8B6200F48B6C /* formatTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8BA32D1B8B6200F48B6C /* formatTime.swift */; };
 		86AF8BBE2D1CFA9800F48B6C /* WeatherVuewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8BBD2D1CFA9800F48B6C /* WeatherVuewModel.swift */; };
 		86F0D2A02CF0294700E622AD /* ForecastDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F0D29F2CF0294700E622AD /* ForecastDetailView.swift */; };
@@ -43,6 +43,7 @@
 		862CDD272D0B8D15003CEA21 /* RainView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainView2.swift; sourceTree = "<group>"; };
 		862CDD292D0B9112003CEA21 /* HumidView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumidView2.swift; sourceTree = "<group>"; };
 		863429742D51D35700C55D35 /* WeatherStation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = WeatherStation.xcodeproj; sourceTree = SOURCE_ROOT; };
+		863A36002DB1D8FE00914A23 /* BarView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarView2.swift; sourceTree = "<group>"; };
 		866FE92E2CD5949D007E3161 /* weatherHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherHeader.swift; sourceTree = "<group>"; };
 		867160A02CFFAE6E00D6B3E8 /* ValidateTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateTime.swift; sourceTree = "<group>"; };
 		867160CE2D066B2100D6B3E8 /* WeatherVew2.swift */ = {isa = PBXFileReference; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = WeatherVew2.swift; sourceTree = "<group>"; };
@@ -67,9 +68,8 @@
 		867E3BF92C851C840020C338 /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
 		867E3C1B2C87F0150020C338 /* ForecastDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastDataService.swift; sourceTree = "<group>"; };
 		867E3C1D2C8BBAA80020C338 /* WeatherDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataService.swift; sourceTree = "<group>"; };
-		8690C1B32DA72575006CEB9A /* dsneww.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dsneww.swift; sourceTree = "<group>"; };
 		869CDAB42CE8352C00950F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		86AF8BA12D18EBD400F48B6C /* testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testing.swift; sourceTree = "<group>"; };
+		86AF8BA12D18EBD400F48B6C /* ImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesView.swift; sourceTree = "<group>"; };
 		86AF8BA32D1B8B6200F48B6C /* formatTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = formatTime.swift; sourceTree = "<group>"; };
 		86AF8BBD2D1CFA9800F48B6C /* WeatherVuewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVuewModel.swift; sourceTree = "<group>"; };
 		86F0D29F2CF0294700E622AD /* ForecastDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDetailView.swift; sourceTree = "<group>"; };
@@ -93,9 +93,12 @@
 				867160D62D08E4CF00D6B3E8 /* WindView2.swift */,
 				862CDD292D0B9112003CEA21 /* HumidView2.swift */,
 				867160D32D06766E00D6B3E8 /* WeatherHeader2.swift */,
+				863A36002DB1D8FE00914A23 /* BarView2.swift */,
 				862CDD272D0B8D15003CEA21 /* RainView2.swift */,
 				867160CE2D066B2100D6B3E8 /* WeatherVew2.swift */,
-				8690C1B32DA72575006CEB9A /* dsneww.swift */,
+				86AF8BA12D18EBD400F48B6C /* ImagesView.swift */,
+				867E3BE72C83E9F20020C338 /* WindView.swift */,
+				86AF8BBD2D1CFA9800F48B6C /* WeatherVuewModel.swift */,
 			);
 			path = Weather2;
 			sourceTree = "<group>";
@@ -103,16 +106,16 @@
 		867BBC392CBF2CA600C49420 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				867E3BE92C83EA0E0020C338 /* RainView.swift */,
 				867E3BE52C83E9C80020C338 /* TempsView.swift */,
 				867E3BD92C83E8950020C338 /* ContentView.swift */,
 				867E3BED2C83EA4D0020C338 /* ShowGraphImage.swift */,
-				867E3BE92C83EA0E0020C338 /* RainView.swift */,
+				867E3BF52C850E9C0020C338 /* WeatherView.swift */,
 				866FE92E2CD5949D007E3161 /* weatherHeader.swift */,
 				867E3C1D2C8BBAA80020C338 /* WeatherDataService.swift */,
 				867E3BF12C83EA870020C338 /* HumidView.swift */,
 				86AF8BA32D1B8B6200F48B6C /* formatTime.swift */,
 				867E3BF32C83EAA90020C338 /* WeatherModule.swift */,
-				867E3BF52C850E9C0020C338 /* WeatherView.swift */,
 				867160A02CFFAE6E00D6B3E8 /* ValidateTime.swift */,
 			);
 			path = Weather;
@@ -140,15 +143,12 @@
 				869CDAB42CE8352C00950F12 /* Info.plist */,
 				867E3BD72C83E8950020C338 /* WeatherStationApp.swift */,
 				867160D02D066CAA00D6B3E8 /* Weather2 */,
-				86AF8BA12D18EBD400F48B6C /* testing.swift */,
 				867E3BF72C85137F0020C338 /* AboutView.swift */,
-				867E3BE72C83E9F20020C338 /* WindView.swift */,
 				867BBC392CBF2CA600C49420 /* Weather */,
 				867E3BEF2C83EA690020C338 /* extensions.swift */,
+				867E3BDD2C83E8960020C338 /* Preview Content */,
 				867E3C3D2C9CD9A50020C338 /* Forecast */,
 				867E3BDB2C83E8960020C338 /* Assets.xcassets */,
-				867E3BDD2C83E8960020C338 /* Preview Content */,
-				86AF8BBD2D1CFA9800F48B6C /* WeatherVuewModel.swift */,
 				863429742D51D35700C55D35 /* WeatherStation.xcodeproj */,
 			);
 			path = WeatherStation;
@@ -206,7 +206,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1630;
 				TargetAttributes = {
 					867E3BD32C83E8950020C338 = {
 						CreatedOnToolsVersion = 15.4;
@@ -264,7 +264,6 @@
 				867E3BEE2C83EA4D0020C338 /* ShowGraphImage.swift in Sources */,
 				86F0D2A02CF0294700E622AD /* ForecastDetailView.swift in Sources */,
 				867E3BF82C85137F0020C338 /* AboutView.swift in Sources */,
-				8690C1B42DA72575006CEB9A /* dsneww.swift in Sources */,
 				867E3BF22C83EA870020C338 /* HumidView.swift in Sources */,
 				867160CF2D066B2100D6B3E8 /* WeatherVew2.swift in Sources */,
 				86AF8BA42D1B8B6200F48B6C /* formatTime.swift in Sources */,
@@ -272,6 +271,7 @@
 				867E3BEA2C83EA0E0020C338 /* RainView.swift in Sources */,
 				867E3BEC2C83EA2A0020C338 /* ForecastModel.swift in Sources */,
 				866FE92F2CD5949D007E3161 /* weatherHeader.swift in Sources */,
+				863A36012DB1D8FE00914A23 /* BarView2.swift in Sources */,
 				862CDD2A2D0B9140003CEA21 /* HumidView2.swift in Sources */,
 				867E3BE82C83E9F20020C338 /* WindView.swift in Sources */,
 				862CDD282D0B8D35003CEA21 /* RainView2.swift in Sources */,
@@ -281,7 +281,7 @@
 				867160D22D066D4600D6B3E8 /* TempsView2.swift in Sources */,
 				867E3C1E2C8BBAA80020C338 /* WeatherDataService.swift in Sources */,
 				867E3BF42C83EAA90020C338 /* WeatherModule.swift in Sources */,
-				86AF8BA22D18EBD400F48B6C /* testing.swift in Sources */,
+				86AF8BA22D18EBD400F48B6C /* ImagesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +323,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = SFSHJML73W;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -386,6 +387,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = SFSHJML73W;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -415,7 +417,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WeatherStation/Preview Content\"";
-				DEVELOPMENT_TEAM = SFSHJML73W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherStation/Info.plist;
@@ -449,7 +450,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WeatherStation/Preview Content\"";
-				DEVELOPMENT_TEAM = SFSHJML73W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherStation/Info.plist;
