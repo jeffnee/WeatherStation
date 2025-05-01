@@ -60,23 +60,43 @@ struct ImagesView: View {
     var body: some View {
         ZStack{
             SetBackground()
-                ScrollView {
+            ScrollView {
                 VStack(spacing: 16) {
-                    ForEach(imageURLs, id: \.self) { url in
-                        AsyncImage(url: URL(string: url)) { phase in
-                            switch phase {
-                            case .empty:
-                                ProgressView()
-                                    .frame(width: 300, height: 150)
-                            case .success(let image):
-                                image
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 320, height: 155)
-                                    .clipped()
-                                    .onTapGesture {
-                                        selectedImage = ImageItem(url: url)
+//                    ForEach(imageURLs, id: \.self) { url in
+//                        AsyncImage(url: URL(string: url)) { phase in
+//                            switch phase {
+//                            case .empty:
+//                                ProgressView()
+//                                    .frame(width: 300, height: 150)
+//                            case .success(let image):
+//                                image
+//                                    .resizable()
+//                                    .aspectRatio(contentMode: .fit)
+//                                    .frame(width: 320, height: 155)
+//                                    .clipped()
+//                                    .onTapGesture {
+//                                        selectedImage = ImageItem(url: url)
                                     }
+////////////////////////////////////////////////////////////////////////////////////////////
+                                ForEach(imageURLs, id: \.self) { url in
+                                if let originalURL = URL(string: url) {
+                                    let freshURL = originalURL.appendingQueryItem(name: "t", value: "\(Date().timeIntervalSince1970)")
+                                    
+                                    AsyncImage(url: freshURL) { phase in
+                                        switch phase {
+                                        case .empty:
+                                            ProgressView()
+                                                .frame(width: 300, height: 150)
+                                        case .success(let image):
+                                            image
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                .frame(width: 320, height: 155)
+                                                .clipped()
+                                                .onTapGesture {
+                                                    selectedImage = ImageItem(url: url)
+                                      
+                                                }
                             case .failure:
                                 Image(systemName: "exclamationmark.triangle")
                                     .resizable()

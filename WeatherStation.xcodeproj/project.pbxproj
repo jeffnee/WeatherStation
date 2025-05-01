@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,7 +19,6 @@
 		867E3BD82C83E8950020C338 /* WeatherStationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867E3BD72C83E8950020C338 /* WeatherStationApp.swift */; };
 		867E3BDA2C83E8950020C338 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867E3BD92C83E8950020C338 /* ContentView.swift */; };
 		867E3BDC2C83E8960020C338 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 867E3BDB2C83E8960020C338 /* Assets.xcassets */; };
-		867E3BDF2C83E8960020C338 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 867E3BDE2C83E8960020C338 /* Preview Assets.xcassets */; };
 		867E3BE62C83E9C80020C338 /* TempsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867E3BE52C83E9C80020C338 /* TempsView.swift */; };
 		867E3BE82C83E9F20020C338 /* WindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867E3BE72C83E9F20020C338 /* WindView.swift */; };
 		867E3BEA2C83EA0E0020C338 /* RainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867E3BE92C83EA0E0020C338 /* RainView.swift */; };
@@ -34,7 +33,6 @@
 		867E3C1C2C87F0150020C338 /* ForecastDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867E3C1B2C87F0150020C338 /* ForecastDataService.swift */; };
 		867E3C1E2C8BBAA80020C338 /* WeatherDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867E3C1D2C8BBAA80020C338 /* WeatherDataService.swift */; };
 		86AF8BA22D18EBD400F48B6C /* ImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8BA12D18EBD400F48B6C /* ImagesView.swift */; };
-		86AF8BA42D1B8B6200F48B6C /* formatTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8BA32D1B8B6200F48B6C /* formatTime.swift */; };
 		86AF8BBE2D1CFA9800F48B6C /* WeatherVuewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8BBD2D1CFA9800F48B6C /* WeatherVuewModel.swift */; };
 		86F0D2A02CF0294700E622AD /* ForecastDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F0D29F2CF0294700E622AD /* ForecastDetailView.swift */; };
 /* End PBXBuildFile section */
@@ -54,7 +52,6 @@
 		867E3BD72C83E8950020C338 /* WeatherStationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStationApp.swift; sourceTree = "<group>"; };
 		867E3BD92C83E8950020C338 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		867E3BDB2C83E8960020C338 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		867E3BDE2C83E8960020C338 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		867E3BE52C83E9C80020C338 /* TempsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempsView.swift; sourceTree = "<group>"; };
 		867E3BE72C83E9F20020C338 /* WindView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindView.swift; sourceTree = "<group>"; };
 		867E3BE92C83EA0E0020C338 /* RainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RainView.swift; sourceTree = "<group>"; };
@@ -70,10 +67,13 @@
 		867E3C1D2C8BBAA80020C338 /* WeatherDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataService.swift; sourceTree = "<group>"; };
 		869CDAB42CE8352C00950F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		86AF8BA12D18EBD400F48B6C /* ImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesView.swift; sourceTree = "<group>"; };
-		86AF8BA32D1B8B6200F48B6C /* formatTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = formatTime.swift; sourceTree = "<group>"; };
 		86AF8BBD2D1CFA9800F48B6C /* WeatherVuewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVuewModel.swift; sourceTree = "<group>"; };
 		86F0D29F2CF0294700E622AD /* ForecastDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		8637F0872DC1A3A8004497E9 /* Preview Content */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Preview Content"; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		867E3BD12C83E8950020C338 /* Frameworks */ = {
@@ -96,9 +96,11 @@
 				863A36002DB1D8FE00914A23 /* BarView2.swift */,
 				862CDD272D0B8D15003CEA21 /* RainView2.swift */,
 				867160CE2D066B2100D6B3E8 /* WeatherVew2.swift */,
+				867E3BED2C83EA4D0020C338 /* ShowGraphImage.swift */,
+				867E3BF72C85137F0020C338 /* AboutView.swift */,
 				86AF8BA12D18EBD400F48B6C /* ImagesView.swift */,
-				867E3BE72C83E9F20020C338 /* WindView.swift */,
 				86AF8BBD2D1CFA9800F48B6C /* WeatherVuewModel.swift */,
+				867E3BE72C83E9F20020C338 /* WindView.swift */,
 			);
 			path = Weather2;
 			sourceTree = "<group>";
@@ -109,12 +111,11 @@
 				867E3BE92C83EA0E0020C338 /* RainView.swift */,
 				867E3BE52C83E9C80020C338 /* TempsView.swift */,
 				867E3BD92C83E8950020C338 /* ContentView.swift */,
-				867E3BED2C83EA4D0020C338 /* ShowGraphImage.swift */,
 				867E3BF52C850E9C0020C338 /* WeatherView.swift */,
 				866FE92E2CD5949D007E3161 /* weatherHeader.swift */,
+				867E3BEF2C83EA690020C338 /* extensions.swift */,
 				867E3C1D2C8BBAA80020C338 /* WeatherDataService.swift */,
 				867E3BF12C83EA870020C338 /* HumidView.swift */,
-				86AF8BA32D1B8B6200F48B6C /* formatTime.swift */,
 				867E3BF32C83EAA90020C338 /* WeatherModule.swift */,
 				867160A02CFFAE6E00D6B3E8 /* ValidateTime.swift */,
 			);
@@ -141,25 +142,15 @@
 			isa = PBXGroup;
 			children = (
 				869CDAB42CE8352C00950F12 /* Info.plist */,
+				8637F0872DC1A3A8004497E9 /* Preview Content */,
 				867E3BD72C83E8950020C338 /* WeatherStationApp.swift */,
 				867160D02D066CAA00D6B3E8 /* Weather2 */,
-				867E3BF72C85137F0020C338 /* AboutView.swift */,
 				867BBC392CBF2CA600C49420 /* Weather */,
-				867E3BEF2C83EA690020C338 /* extensions.swift */,
-				867E3BDD2C83E8960020C338 /* Preview Content */,
 				867E3C3D2C9CD9A50020C338 /* Forecast */,
 				867E3BDB2C83E8960020C338 /* Assets.xcassets */,
 				863429742D51D35700C55D35 /* WeatherStation.xcodeproj */,
 			);
 			path = WeatherStation;
-			sourceTree = "<group>";
-		};
-		867E3BDD2C83E8960020C338 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				867E3BDE2C83E8960020C338 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		867E3C3D2C9CD9A50020C338 /* Forecast */ = {
@@ -192,6 +183,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				8637F0872DC1A3A8004497E9 /* Preview Content */,
 			);
 			name = WeatherStation;
 			productName = WeatherStation;
@@ -242,7 +236,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				867E3BDF2C83E8960020C338 /* Preview Assets.xcassets in Resources */,
 				867E3BDC2C83E8960020C338 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,7 +259,6 @@
 				867E3BF82C85137F0020C338 /* AboutView.swift in Sources */,
 				867E3BF22C83EA870020C338 /* HumidView.swift in Sources */,
 				867160CF2D066B2100D6B3E8 /* WeatherVew2.swift in Sources */,
-				86AF8BA42D1B8B6200F48B6C /* formatTime.swift in Sources */,
 				867E3BF02C83EA690020C338 /* extensions.swift in Sources */,
 				867E3BEA2C83EA0E0020C338 /* RainView.swift in Sources */,
 				867E3BEC2C83EA2A0020C338 /* ForecastModel.swift in Sources */,

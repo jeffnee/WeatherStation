@@ -20,7 +20,7 @@ struct BarView2: View {
                 Text("Currently \(wthr.barCurr)")
                     .bold()
                 
-                Text("Trend \(wthr.barTrend)")
+                Text("Trend: \(wthr.barTrend)")
 
                 let graphUrl = "https://thedriveweather.com/images/BarometerHistory.gif"
                 ShowGraphImage(graphUrl: graphUrl)

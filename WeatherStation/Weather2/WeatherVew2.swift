@@ -66,24 +66,83 @@ struct WeatherView2: View {
     WeatherView2()
 }
 
-struct screenHeader: View {
-    var body: some View {
-        VStack {
-            Text("Jeffs weather station")
-                .font(.title)
-            
-            Text("Located at 200 E Mountain Dr")
-                .font(.title3)
-            
-            Text("Santa Barbara, Ca")
-                .font(.title3)
-            
-            Image("ftn02")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(height: 150)
-                .cornerRadius(13)
-        }
-    }
+struct screenHeaderx: View {
+     var body: some View {
+          VStack {
+               Text("Jeffs weather station")
+                    .font(.title)
+               
+               Text("Located at 200 E Mountain Dr")
+                    .font(.title3)
+               
+               Text("Santa Barbara, Ca")
+                    .font(.title3)
+               
+               Image("ftn02")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 320, height: 200)
+                    .cornerRadius(20)
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
+               
+               
+               
+               
+          }
+     }
+     
 }
 
+
+
+struct screenHeaderz: View {
+     var body: some View {
+          VStack(spacing: 8) {
+               Text("Jeff's Weather Station")
+                    .font(.title)
+                    .fontWeight(.bold)
+               
+               Text("Located at 200 E Mountain Dr")
+                    .font(.title3)
+               
+               Text("Santa Barbara, CA")
+                    .font(.title3)
+               
+               Image("ftn2")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 320, height: 20)
+          }
+     }
+     }
+
+
+
+
+struct screenHeader: View {
+    var body: some View {
+        VStack(spacing: 8) {
+            Text("Jeff's Weather Station")
+                .font(.title)
+                .fontWeight(.bold)
+
+            Text("Located at 200 E Mountain Dr")
+                .font(.title3)
+
+            Text("Santa Barbara, CA")
+                .font(.title3)
+
+            ZStack {
+                Image("driveView")
+                    .resizable()
+                    .scaledToFill() // <- fills the frame!
+                    .frame(width: 320, height: 200)
+                    .clipped()
+            }
+            .frame(width: 320, height: 200)
+            .clipShape(RoundedRectangle(cornerRadius: 20))
+            .shadow(radius: 5)
+        }
+        .padding()
+    }
+}
