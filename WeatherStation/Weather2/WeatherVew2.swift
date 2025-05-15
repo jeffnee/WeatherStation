@@ -12,7 +12,6 @@ struct WeatherView2: View {
             SetBackground()
             
             if weather.isEmpty {
-                // Show this while data is loading
                 ProgressView()
                     .padding()
                     //.background(Color(.systemBackground))
@@ -135,7 +134,7 @@ struct screenHeader: View {
             ZStack {
                 Image("driveView")
                     .resizable()
-                    .scaledToFill() // <- fills the frame!
+                    .scaledToFill()
                     .frame(width: 320, height: 200)
                     .clipped()
             }
