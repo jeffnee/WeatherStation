@@ -27,7 +27,7 @@ struct WeatherView2: View {
                     VStack {
                         screenHeader()
                         
-                        Text("Last update:")
+                        Text("Current conditions as of:")
                             .foregroundColor(timeIsRecent ? .primary : .red)
                         
                         Text(" \(lastUpdateTime) \(lastUpdateDate)")
@@ -64,7 +64,7 @@ struct WeatherView2: View {
 #Preview {
     WeatherView2()
 }
-
+/*
 struct screenHeaderx: View {
      var body: some View {
           VStack {
@@ -113,8 +113,8 @@ struct screenHeaderz: View {
                     .frame(width: 320, height: 20)
           }
      }
-     }
-
+}
+*/
 
 
 

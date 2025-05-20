@@ -8,6 +8,8 @@
 import Foundation
 
 class ForecastAPI{
+//    let zipCode: String
+    
     private let apiUrl = "https://api.weather.com/v3/wx/forecast/daily/5day?postalKey=93108:US&units=e&language=en-US&format=json&apiKey=be98b4148d7443ca98b4148d7473cac2"
     
     func getForecastData(completion: @escaping (Daypart?) -> Void) {
