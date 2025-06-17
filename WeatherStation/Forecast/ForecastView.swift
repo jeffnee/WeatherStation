@@ -3,6 +3,9 @@ import SwiftUI
 
 struct ForecastView: View {
     @State private var daypart: Daypart?
+    @State private var location:LocationResponse?
+    
+    
     @State private var scrollToTopID = UUID()
 
     var body: some View {
@@ -11,8 +14,8 @@ struct ForecastView: View {
             VStack {
                 Text("Local Forecast")
                     .font(.largeTitle)
-                
                 Text("Santa Barbara area")
+                
                     
                 if let daypart = daypart {
                     ScrollViewReader { proxy in
@@ -55,15 +58,25 @@ struct ForecastView: View {
         }
         .onAppear {
             fetchForecastData()
+            fetchLocationData()
         }
     }
 
     private func fetchForecastData() {
         // Trigger API call to refresh data
-        ForecastAPI().getForecastData { fetchedDaypart in
+        ForecastAPI(zipCode: "93108").getForecastData { fetchedDaypart in
             DispatchQueue.main.async {
                 self.daypart = fetchedDaypart
-                self.scrollToTopID = UUID() // Reset scroll position identifier
+                self.scrollToTopID = UUID()
+            }
+        }
+    }
+    
+    private func fetchLocationData() {
+       LocationAPI(zipCode: "93108").getLocationtData { fetchedLocation in
+            DispatchQueue.main.async {
+                self.location = fetchedLocation
+                self.scrollToTopID = UUID()
             }
         }
     }
