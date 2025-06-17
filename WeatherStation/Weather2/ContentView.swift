@@ -19,7 +19,7 @@ struct ContentView: View {
                 }
                 .tag(0)
 
-            ForecastView()
+            ForecastViewZip()
                 .id("tab-\(selectedTab == 1 ? UUID() : UUID())")
                 .tabItem {
                     Label("Forecast", systemImage: "calendar.badge.clock")
