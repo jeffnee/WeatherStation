@@ -4,18 +4,19 @@ import SwiftUI
 struct ForecastView: View {
     @State private var daypart: Daypart?
     @State private var location:LocationResponse?
-    
-    
     @State private var scrollToTopID = UUID()
-
+    var zipCode: String = "93110"
+    
     var body: some View {
         ZStack {
             SetBackground()
             VStack {
                 Text("Local Forecast")
                     .font(.largeTitle)
-                Text("Santa Barbara area")
-                
+               if let city = location?.location.city {
+                    Text(city)
+                        .font(.title2)
+                }
                     
                 if let daypart = daypart {
                     ScrollViewReader { proxy in
@@ -25,7 +26,7 @@ struct ForecastView: View {
                                 Color.clear
                                     .frame(height: 0)
                                     .id(scrollToTopID)
-
+ 
                                 ForEach(0..<(daypart.dayOrNight?.count ?? 0), id: \.self) { index in
                                     if daypart.dayOrNight?[index] != nil {
                                         VStack(alignment: .leading) {
@@ -52,7 +53,7 @@ struct ForecastView: View {
                         }
                     }
                 } else {
-                    Text("Loading weather data...")
+                    Text("Invalid Zip Code \(zipCode)")
                 }
             }
         }
@@ -64,7 +65,7 @@ struct ForecastView: View {
 
     private func fetchForecastData() {
         // Trigger API call to refresh data
-        ForecastAPI(zipCode: "93108").getForecastData { fetchedDaypart in
+        ForecastAPI(zipCode: "\(zipCode)").getForecastData { fetchedDaypart in
             DispatchQueue.main.async {
                 self.daypart = fetchedDaypart
                 self.scrollToTopID = UUID()
@@ -73,7 +74,7 @@ struct ForecastView: View {
     }
     
     private func fetchLocationData() {
-       LocationAPI(zipCode: "93108").getLocationtData { fetchedLocation in
+       LocationAPI(zipCode: "\(zipCode)").getLocationtData { fetchedLocation in
             DispatchQueue.main.async {
                 self.location = fetchedLocation
                 self.scrollToTopID = UUID()

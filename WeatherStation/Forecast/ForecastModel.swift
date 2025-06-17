@@ -16,15 +16,13 @@ struct ForecastData: Codable {
     let daypart: [Daypart]?
 }
 
-//struct LocationData: Codable {
-//   var zipCode: String
-//    let city: String
-//}
 
 struct LocationResponse: Codable {
-    let location: Location
-
-    struct Location: Codable {
-        let city: String
-    }
+    let location: LocationDetails
 }
+
+struct LocationDetails: Codable {
+    let city: String
+    let adminDistrictCode: String
+}
+

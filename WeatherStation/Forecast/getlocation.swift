@@ -1,4 +1,4 @@
-//
+///
 //  getlocation.swift
 //  WeatherStation
 //
@@ -16,7 +16,7 @@ class LocationAPI{
     }
     
     private var locationUrl: String {
-        print("---location----->\(zipCode)<------------")
+ 
         return "https://api.weather.com/v3/location/point?postalKey=\(zipCode):US&language=en-US&format=json&apiKey=be98b4148d7443ca98b4148d7473cac2"
        }
     
@@ -47,7 +47,7 @@ class LocationAPI{
                 let location = locationData
                 completion(location)
             } catch {
-                print("Error decoding Location data: \(error)")
+                print("Invalid zip code: \(self.zipCode.self)")
                 completion(nil)
            }
         }
@@ -55,4 +55,3 @@ class LocationAPI{
         task.resume()
     }
 }
-
