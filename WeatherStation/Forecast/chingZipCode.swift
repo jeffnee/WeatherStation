@@ -35,6 +35,7 @@ struct ForecastViewZip: View {
                 if let city = location?.location.city {
                     Text(city)
                         .font(.title2)
+                        
                 }
                     
                 if let daypart = daypart {
@@ -53,7 +54,7 @@ struct ForecastViewZip: View {
                                                 .font(.title)
                                                 .bold()
                                             ForecastDetailView(daypart: daypart, index: index)
-                                            Text("\(daypart.narrative?[index] ?? "N/A")")
+                                Text("\(daypart.narrative?[index] ?? "N/A")")
                                             divider()
                                         }
                                     }
@@ -69,7 +70,7 @@ struct ForecastViewZip: View {
                         }
                     }
                 } else {
-                    Text("Invalid Zip Code \(zipCode)")
+                    Text("Loading forecast dada for Zip Code: \(zipCode)")
                 }
             }
         }
