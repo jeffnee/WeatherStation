@@ -21,7 +21,7 @@ struct ForecastViewZip: View {
                 HStack {
                     Text("Local Forecast")
                         .font(.largeTitle)
-                    Spacer()
+                    //Spacer()
                     Button(action: {
                         showingZipCodeSheet = true
                     }) {
