@@ -15,7 +15,7 @@ struct ForecastView: View {
                     .font(.largeTitle)
                if let city = location?.location.city {
                     Text(city)
-                        .font(.title2)
+                        //.font(.title2)
                 }
                     
                 if let daypart = daypart {
