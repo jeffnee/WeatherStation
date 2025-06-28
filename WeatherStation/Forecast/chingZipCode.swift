@@ -11,43 +11,41 @@ struct ForecastViewZip: View {
     @State private var daypart: Daypart?
     @State private var location: LocationResponse?
     @State private var scrollToTopID = UUID()
-    @State private var zipCode: String = "93110"
+    @State private var zipCode: String = "93108"
     @State private var showingZipCodeSheet = false
     
     var body: some View {
         ZStack {
             SetBackground()
             VStack {
-                HStack {
-                    Text("Forecast")
-                        .font(.largeTitle)
-                    Spacer()
-                    
-                    Button(action: {
-                        showingZipCodeSheet = true
-                    }) {
-                        VStack{
-                            Image(systemName: "location.circle")
-                                .font(.title2)
-                                .foregroundColor(.primary)
-                            Text("Change")
-                                .font(.subheadline)
-                                .foregroundStyle(.primary)
-                            Text("Location")
-                                .font(.subheadline)
-                                .foregroundStyle(.primary)
-                            
+
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text("Forecast for")
+                            .font(.largeTitle)
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            showingZipCodeSheet = true
+                        }) {
+                            VStack {
+                                Image(systemName: "location.circle")
+                                Text("Change")
+                            }
+                            .font(.caption)
+                            .foregroundColor(.primary)
                         }
                     }
-                }
-                .padding(.horizontal)
-                
-                if let city = location?.location.city {
-                    Text(city)
-                        .font(.title2)
-                        
-                }
+                    .padding(.horizontal)
                     
+                    if let city = location?.location.city {
+                        Text("\(city)")
+                            .font(.title2)
+                            .padding(.horizontal)
+                    }
+                }
+
                 if let daypart = daypart {
                     ScrollViewReader { proxy in
                         ScrollView {
@@ -155,8 +153,8 @@ struct ZipCodeChangeSheet: View {
                 
                 if !validationMessage.isEmpty {
                     Text(validationMessage)
-                        .font(.caption)
-                        .foregroundColor(isValid ? .green : .red)
+                        //.font(.caption)
+                        .foregroundColor(isValid ? .primary : .red)
                         .padding(.horizontal)
                 }
                 
@@ -217,7 +215,7 @@ struct ZipCodeChangeSheet: View {
         
         // Basic format validation
         guard enteredZipCode.count == 5, enteredZipCode.allSatisfy({ $0.isNumber }) else {
-            validationMessage = "Zip code must be 5 digits"
+            validationMessage = "Zip must be 5 digits"
             isValid = false
             return
         }
@@ -233,155 +231,13 @@ struct ZipCodeChangeSheet: View {
                     validationMessage = "Valid - \(location.location.city)"
                     isValid = true
                 } else {
-                    validationMessage = "Invalid zip code or location not found"
+                    validationMessage = "Invalid zip or location not found"
                     isValid = false
                 }
             }
         }
     }
 }
-
- 
-//struct ZipCodeChangeSheet: View {
-//    @Environment(\.dismiss) private var dismiss
-//    @State private var enteredZipCode: String = ""
-//    @State private var isValidating = false
-//    @State private var validationMessage = ""
-//    @State private var isValid = false
-//    @FocusState private var isTextFieldFocused: Bool
-//    
-//    let currentZipCode: String
-//    let onZipCodeChanged: (String) -> Void
-//    
-//    var body: some View {
-//        NavigationView {
-//            VStack(spacing: 20) {
-//                Text("Change Location")
-//                    .font(.largeTitle)
-//                    .bold()
-//                    .padding(.top)
-//                
-//                VStack(alignment: .leading, spacing: 8) {
-//                    Text("Current Zip Code: \(currentZipCode)")
-//                        .font(.subheadline)
-//                        .foregroundColor(.secondary)
-//                    
-//                    TextField("Enter new zip code", text: $enteredZipCode)
-//                        .textFieldStyle(RoundedBorderTextFieldStyle())
-//                        .keyboardType(.numberPad)
-//                        .focused($isTextFieldFocused)
-//                        .onSubmit {
-//                            validateZipCode()
-//                        }
-//                        .onChange(of: enteredZipCode) { _ in
-//                            // Reset validation when user types
-//                            isValid = false
-//                            validationMessage = ""
-//                        }
-//                }
-//                .padding(.horizontal)
-//                
-//                if !validationMessage.isEmpty {
-//                    Text(validationMessage)
-//                        .font(.subheadline)
-//                        .foregroundColor(isValid ? .black : .red)
-//                        .padding(.horizontal)
-//                }
-//                
-//                if isValidating {
-//                    ProgressView("Validating...")
-//                        .padding()
-//                }
-//                
-//                Button(action: validateZipCode) {
-//                    Text("Validate Zip Code")
-//                        .frame(maxWidth: .infinity)
-//                        .padding()
-//                        .background(Color.blue)
-//                        .foregroundColor(.white)
-//                        .cornerRadius(10)
-//                }
-//                .padding(.horizontal)
-//                .disabled(enteredZipCode.isEmpty || isValidating)
-//                
-//                Button(action: {
-//                    if isValid {
-//                        onZipCodeChanged(enteredZipCode)
-//                        dismiss()
-//                    }
-//                }) {
-//                    Text("Use This Zip Code")
-//                        .frame(maxWidth: .infinity)
-//                        .padding()
-//                        .background(isValid ? Color.green : Color.gray)
-//                        .foregroundColor(.white)
-//                        .cornerRadius(10)
-//                }
-//                .padding(.horizontal)
-//                .disabled(!isValid)
-//                
-//                Spacer()
-//            }
-//            .navigationBarTitleDisplayMode(.inline)
-//            .toolbar {
-//                ToolbarItem(placement: .navigationBarLeading) {
-//                    Button("Cancel") {
-//                        dismiss()
-//                    }
-//                }
-//                ToolbarItem(placement: .navigationBarTrailing) {
-//                    Button("Done") {
-//                        isTextFieldFocused = false
-//                    }
-//                }
-//            }
-//        }
-//        .onAppear {
-//            enteredZipCode = currentZipCode
-//            // Auto-focus the text field when sheet appears
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-//                isTextFieldFocused = true
-//            }
-//        }
-//        .onTapGesture {
-//            // Dismiss keyboard when tapping outside
-//            isTextFieldFocused = false
-//        }
-//    }
-//    
-//    private func validateZipCode() {
-//        guard !enteredZipCode.isEmpty else {
-//            validationMessage = "Please enter a zip code"
-//            isValid = false
-//            return
-//        }
-//        
-//        // Basic format validation
-//        guard enteredZipCode.count == 5, enteredZipCode.allSatisfy({ $0.isNumber }) else {
-//            validationMessage = "Zip code must be 5 digits"
-//            isValid = false
-//            return
-//        }
-//        
-//        isValidating = true
-//        validationMessage = ""
-//        isTextFieldFocused = false // Dismiss keyboard during validation
-//        
-//        // Use your existing LocationAPI to validate the zip code
-//        LocationAPI(zipCode: enteredZipCode).getLocationtData { fetchedLocation in
-//            DispatchQueue.main.async {
-//                isValidating = false
-//                if let location = fetchedLocation, !location.location.city.isEmpty {
-//                    validationMessage = "\(location.location.city)"
-//                    isValid = true
-//                } else {
-//                    validationMessage = "Invalid zip code or location not found"
-//                    isValid = false
-//                }
-//            }
-//        }
-//    }
-//}
 
 #Preview {
     ForecastView()

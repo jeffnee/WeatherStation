@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct ForecastDetailView: View {
-    let daypart: Daypart // Replace `Daypart` with the actual type of `daypart`
-    let index: Int       // Pass the index for the data
+    let daypart: Daypart
+    let index: Int 
 
     var body: some View {
         HStack {
