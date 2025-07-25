@@ -51,6 +51,7 @@
 		867160D12D066D1D00D6B3E8 /* TempsView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempsView2.swift; sourceTree = "<group>"; };
 		867160D32D06766E00D6B3E8 /* WeatherHeader2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHeader2.swift; sourceTree = "<group>"; };
 		867160D62D08E4CF00D6B3E8 /* WindView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindView2.swift; sourceTree = "<group>"; };
+		867BFEF82E12176E00195336 /* WeatherStation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeatherStation.entitlements; sourceTree = "<group>"; };
 		867E3BD42C83E8950020C338 /* WeatherStation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherStation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		867E3BD72C83E8950020C338 /* WeatherStationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStationApp.swift; sourceTree = "<group>"; };
 		867E3BDB2C83E8960020C338 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -135,6 +136,7 @@
 		867E3BD62C83E8950020C338 /* WeatherStation */ = {
 			isa = PBXGroup;
 			children = (
+				867BFEF82E12176E00195336 /* WeatherStation.entitlements */,
 				8637F0872DC1A3A8004497E9 /* Preview Content */,
 				867E3BD72C83E8950020C338 /* WeatherStationApp.swift */,
 				867E3BEF2C83EA690020C338 /* extensions.swift */,
@@ -404,6 +406,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WeatherStation/WeatherStation.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WeatherStation/Preview Content\"";
@@ -420,7 +423,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3.4;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeffneely.WeatherStation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -437,6 +440,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WeatherStation/WeatherStation.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WeatherStation/Preview Content\"";
@@ -453,7 +457,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3.4;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeffneely.WeatherStation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

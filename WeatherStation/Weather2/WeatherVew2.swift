@@ -132,7 +132,7 @@ struct screenHeader: View {
                 .font(.title3)
 
             ZStack {
-                Image("driveView")
+                Image("driveView2")
                     .resizable()
                     .scaledToFill()
                     .frame(width: 320, height: 200)
